@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CCE63825-1EE4-4E6D-9EFD-EDF89731F0FA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SAL.WPF</RootNamespace>
+    <AssemblyName>SAL.WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.0\Libraries\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Model\CustomerCheckBox.cs" />
+    <Compile Include="Model\Entitiy\Entity_Customer.cs" />
+    <Compile Include="Model\Entitiy\Entity_Equipment.cs" />
+    <Compile Include="Model\Entitiy\Entity_Site.cs" />
+    <Compile Include="Model\Entitiy\Entity_Workflow.cs" />
+    <Compile Include="Model\Entitiy\SampleData.cs" />
+    <Compile Include="Model\Entitiy\User.cs" />
+    <Compile Include="ViewModel\AddBatchSiteEquipmentViewModel.cs" />
+    <Compile Include="ViewModel\CommandViewModel.cs" />
+    <Compile Include="ViewModel\EditSiteEquipmentViewModel.cs" />
+    <Compile Include="ViewModel\EditContactViewModel.cs" />
+    <Compile Include="ViewModel\ContactViewModel.cs" />
+    <Compile Include="ViewModel\EquipmentAttachmentViewModel.cs" />
+    <Compile Include="ViewModel\EquipmentAttributeViewModel.cs" />
+    <Compile Include="ViewModel\EquipmentCustomerInputViewModel.cs" />
+    <Compile Include="ViewModel\EquipmentNameplateViewModel.cs" />
+    <Compile Include="ViewModel\EquipmentProblemViewModel.cs" />
+    <Compile Include="ViewModel\EquipmentSpecificationViewModel.cs" />
+    <Compile Include="ViewModel\EquipmentViewModel.cs" />
+    <Compile Include="ViewModel\SiteEquipmentViewModel.cs" />
+    <Compile Include="ViewModel\LeftViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\SiteViewModel.cs" />
+    <Compile Include="ViewModel\SiteVisitViewModel.cs" />
+    <Compile Include="View\AddBatchSiteEquipmentPage.xaml.cs">
+      <DependentUpon>AddBatchSiteEquipmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditSiteEquipmentPage.xaml.cs">
+      <DependentUpon>EditSiteEquipmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditContactPage.xaml.cs">
+      <DependentUpon>EditContactPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ContactPage.xaml.cs">
+      <DependentUpon>ContactPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EquipmentAttachmentPage.xaml.cs">
+      <DependentUpon>EquipmentAttachmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EquipmentAttributePage.xaml.cs">
+      <DependentUpon>EquipmentAttributePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EquipmentCustomerInputPage.xaml.cs">
+      <DependentUpon>EquipmentCustomerInputPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EquipmentNameplatePage.xaml.cs">
+      <DependentUpon>EquipmentNameplatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EquipmentPage.xaml.cs">
+      <DependentUpon>EquipmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EquipmentProblemPage.xaml.cs">
+      <DependentUpon>EquipmentProblemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EquipmentSpecificationPage.xaml.cs">
+      <DependentUpon>EquipmentSpecificationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SiteEquipmentPage.xaml.cs">
+      <DependentUpon>SiteEquipmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SitePage.xaml.cs">
+      <DependentUpon>SitePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SiteVisitPage.xaml.cs">
+      <DependentUpon>SiteVisitPage.xaml</DependentUpon>
+    </Compile>
+    <Page Include="View\AddBatchSiteEquipmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditSiteEquipmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EditContactPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ContactPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EquipmentAttachmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EquipmentAttributePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EquipmentCustomerInputPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EquipmentNameplatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EquipmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EquipmentProblemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EquipmentSpecificationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SiteEquipmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LeftPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\LeftPage.xaml.cs">
+      <DependentUpon>LeftPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\SitePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SiteVisitPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

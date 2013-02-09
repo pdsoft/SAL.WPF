@@ -1,0 +1,46 @@
+﻿<Page x:Class="SAL.WPF.View.LeftPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+	Title="LeftPage" Background="#2D000000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Customer &amp; Site" />
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <Label Content="Customer: "/>
+            <TextBox Width="150" />
+        </StackPanel>
+        <ListBox Grid.Row="3" ItemsSource="{Binding CustomerCheckBoxtList}">
+            <ListBox.ItemTemplate>
+                <HierarchicalDataTemplate>
+                    <CheckBox Content="{Binding Name}" IsChecked="{Binding IsChecked}"/>
+                </HierarchicalDataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <TextBlock Grid.Row="4" Margin="2,6">
+            <Hyperlink Command="{Binding Path=Command}">
+                <TextBlock Text="Add New Customer" />
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="5" Margin="2,6">
+            <Hyperlink Command="{Binding Path=Command}">
+                <TextBlock Text="Add New Site" />
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Grid.Row="6" Margin="2,6">
+            <Hyperlink Command="{Binding Path=Command}">
+                <TextBlock Text="Add New Location" />
+            </Hyperlink>
+        </TextBlock>
+    </Grid>
+</Page>

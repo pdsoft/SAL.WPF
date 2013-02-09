@@ -1,0 +1,23 @@
+﻿<Page x:Class="SAL.WPF.View.SiteVisitPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+	Title="SiteVisitPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <ListView Grid.Row="0" ItemsSource="{Binding Path=SiteVisitList}" IsSynchronizedWithCurrentItem="True" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Visit By" DisplayMemberBinding="{Binding Path=VisitBy}"/>
+                    <GridViewColumn Header="Expect Date" DisplayMemberBinding="{Binding Path=ExpectDate}"/>
+                    <GridViewColumn Header="Actual Date" DisplayMemberBinding="{Binding Path=ActualDate}"/>
+                    <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Path=Status}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

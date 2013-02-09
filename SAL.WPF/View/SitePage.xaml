@@ -1,0 +1,53 @@
+﻿<Page x:Class="SAL.WPF.View.SitePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+      mc:Ignorable="d" 
+	Title="SitePage" Background="#2D000000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Content="Company:" />
+            <Label Grid.Row="1" Grid.Column="0" Content="Primary Contact:" />
+            <Label Grid.Row="0" Grid.Column="2" Content="Site Address:" />
+            <Label Grid.Row="1" Grid.Column="2" Content="Phone/Fax/Email:" />
+            <TextBox Grid.Row="0" Grid.Column="1" Width="200"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Width="200"/>
+            <TextBox Grid.Row="0" Grid.Column="3" Width="200"/>
+            <TextBox Grid.Row="1" Grid.Column="3" Width="200"/>
+            <Button Grid.Row="0" Grid.Column="4" Width="50" Content="Edit" HorizontalAlignment="Right" />
+        </Grid>
+        <TabControl Grid.Row="1" SelectedItem="{Binding SelectedItem}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <TabItem Header="Equipment">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=SiteEquipmentPage}"></Frame>
+            </TabItem>
+            <TabItem Header="Visit">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=SiteVisitPage}"></Frame>
+            </TabItem>
+            <TabItem Header="Contact">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=ContactPage}"></Frame>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

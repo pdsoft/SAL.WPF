@@ -1,0 +1,52 @@
+﻿<Page x:Class="SAL.WPF.View.EquipmentSpecificationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+	Title="EquipmentSpecificationPage" Background="#2D000000">
+    <Grid Width="400" Height="260">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="60"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="Blue" Foreground="White" Content="Installation Information" />
+        <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Content="Working Voltage:"/>
+        <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Content="Number of Conduct:"/>
+        <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Content="Enclosed or Open Bus:"/>
+        <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Content="NEMA Type:"/>
+        <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Content="AIC Rating:"/>
+        <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Content="Current Rating:"/>
+        <Label Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" Content="Name of Feeder:"/>
+        <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right" Content="SO #:"/>
+        <Label Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right" Content="BIL Rating:"/>
+        <TextBox Grid.Row="1" Grid.Column="1"/>
+        <TextBox Grid.Row="2" Grid.Column="1"/>
+        <TextBox Grid.Row="3" Grid.Column="1"/>
+        <TextBox Grid.Row="4" Grid.Column="1"/>
+        <TextBox Grid.Row="5" Grid.Column="1"/>
+        <TextBox Grid.Row="6" Grid.Column="1"/>
+        <TextBox Grid.Row="7" Grid.Column="1"/>
+        <TextBox Grid.Row="8" Grid.Column="1"/>
+        <TextBox Grid.Row="9" Grid.Column="1"/>
+        <Label Grid.Row="1" Grid.Column="3" Content="Volts"/>
+        <Label Grid.Row="2" Grid.Column="3" Content="Pcs"/>
+        <Label Grid.Row="4" Grid.Column="3" Content="NEMA"/>
+        <Label Grid.Row="5" Grid.Column="3" Content="Kamps"/>
+        <Label Grid.Row="6" Grid.Column="3" Content="Amps"/>
+        <Label Grid.Row="9" Grid.Column="3" Content="KV BIL"/>
+    </Grid>
+</Page>

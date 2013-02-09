@@ -1,0 +1,46 @@
+﻿<Page x:Class="SAL.WPF.View.EditContactPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+	Title="EditContactPage">
+    <Grid Background="#2D000000" Width="800" Height="250" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Content="Contact" Background="Blue" Foreground="White" />
+        <Label Grid.Row="1" Grid.Column="0" Content="Contact Name:" HorizontalAlignment="Right" />
+        <Label Grid.Row="2" Grid.Column="0" Content="Contact Type:" HorizontalAlignment="Right"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Title:" HorizontalAlignment="Right"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Best Contact Method and Time:" HorizontalAlignment="Right" />
+        <Label Grid.Row="1" Grid.Column="2" Content="Office Phone:" HorizontalAlignment="Right" />
+        <Label Grid.Row="2" Grid.Column="2" Content="Mobile Phone:" HorizontalAlignment="Right" />
+        <Label Grid.Row="3" Grid.Column="2" Content="Email:" HorizontalAlignment="Right" />
+        <Label Grid.Row="4" Grid.Column="2" Content="Fax:" HorizontalAlignment="Right" />
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Path=EditEquipment.AssetID}"/>
+        <ComboBox Grid.Row="2" Grid.Column="1"/>
+        <ComboBox Grid.Row="3" Grid.Column="1"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Grid.RowSpan="3"/>
+        <TextBox Grid.Row="1" Grid.Column="3"/>
+        <TextBox Grid.Row="2" Grid.Column="3"/>
+        <TextBox Grid.Row="3" Grid.Column="3"/>
+        <TextBox Grid.Row="4" Grid.Column="3"/>
+        <Button Grid.Row="8" Grid.Column="1" Width="70" Content="Save" Command="{Binding SaveCommand}"/>
+        <Button Grid.Row="8" Grid.Column="2" Width="70" Content="Cancel" Command="{Binding CancelCommand}" />
+    </Grid>
+</Page>
