@@ -18,7 +18,7 @@ namespace SAL.WPF
         {
             base.OnStartup(e);
 
-            // Configure service locator
+            // Configure service locator // Test
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.DataContext = new MainViewModel();
