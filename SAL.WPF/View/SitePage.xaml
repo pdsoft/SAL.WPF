@@ -5,35 +5,43 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
       mc:Ignorable="d" 
-	Title="SitePage" Background="#2D000000">
+	Title="SitePage">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="200"/>
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="25"/>
+                <RowDefinition Height="4"/>
                 <RowDefinition Height="25"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Content="Company:" />
-            <Label Grid.Row="1" Grid.Column="0" Content="Primary Contact:" />
-            <Label Grid.Row="0" Grid.Column="2" Content="Site Address:" />
-            <Label Grid.Row="1" Grid.Column="2" Content="Phone/Fax/Email:" />
-            <TextBox Grid.Row="0" Grid.Column="1" Width="200"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Width="200"/>
-            <TextBox Grid.Row="0" Grid.Column="3" Width="200"/>
-            <TextBox Grid.Row="1" Grid.Column="3" Width="200"/>
-            <Button Grid.Row="0" Grid.Column="4" Width="50" Content="Edit" HorizontalAlignment="Right" />
+            <Label Grid.Row="2" Grid.Column="0" Content="Primary Contact:" />
+            <Label Grid.Row="0" Grid.Column="3" Content="Site Address:" />
+            <Label Grid.Row="2" Grid.Column="3" Content="Phone/Fax/Email:" />
+            <TextBox Grid.Row="0" Grid.Column="1"/>
+            <TextBox Grid.Row="2" Grid.Column="1"/>
+            <TextBox Grid.Row="0" Grid.Column="4"/>
+            <TextBox Grid.Row="2" Grid.Column="4"/>
+            <TextBlock Grid.Row="0" Grid.Column="6" Margin="2,6">
+                <Hyperlink Command="">
+                    <TextBlock Text="Edit" />
+                </Hyperlink>
+            </TextBlock>
         </Grid>
-        <TabControl Grid.Row="1" SelectedItem="{Binding SelectedItem}">
+        <TabControl Grid.Row="2" SelectedItem="{Binding SelectedItem}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectionChanged">
                     <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>

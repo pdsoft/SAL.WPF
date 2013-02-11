@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Behaviour\GridViewColumnResize.cs" />
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Model\CustomerCheckBox.cs" />
     <Compile Include="Model\Entitiy\Entity_Customer.cs" />
@@ -126,6 +127,10 @@
     <Compile Include="View\SiteVisitPage.xaml.cs">
       <DependentUpon>SiteVisitPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Resource.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AddBatchSiteEquipmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,7 +183,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\MainWindow.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -190,7 +195,7 @@
     <Compile Include="View\LeftPage.xaml.cs">
       <DependentUpon>LeftPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
+    <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>

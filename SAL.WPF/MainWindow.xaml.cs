@@ -12,7 +12,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SAL.WPF.View
+namespace SAL.WPF
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

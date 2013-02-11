@@ -5,41 +5,50 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
 	Title="EquipmentPage">
-    <Grid>
+    <Page.Resources>
+        <ResourceDictionary Source="../Resource.xaml" />
+    </Page.Resources>
+    <Grid Margin="4">
         <Grid.RowDefinitions>
             <RowDefinition />
+            <RowDefinition Height="4"/>
             <RowDefinition />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
+            <ColumnDefinition Width="4"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Frame Grid.Row="0" Grid.Column="0" BorderBrush="Blue" BorderThickness="1" NavigationUIVisibility="Hidden" Content="{Binding Path=NameplatePanel}"></Frame>
-        <Frame Grid.Row="0" Grid.Column="1" BorderBrush="Blue" BorderThickness="1" NavigationUIVisibility="Hidden" Content="{Binding Path=SpecificationPanel}"></Frame>
-        <TabControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" SelectedItem="{Binding SelectedItem}">
+        <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource BorderStyle}">
+            <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=NameplatePanel}"></Frame>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="2" Style="{StaticResource BorderStyle}">
+            <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=SpecificationPanel}"></Frame>
+        </Border>
+        <TabControl Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" SelectedItem="{Binding SelectedItem}">
             <TabItem Header="Attribute/Value">
-                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=AttributePanel}"></Frame>
+                <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=AttributePanel}"></Frame>
             </TabItem>
             <TabItem Header="Problem">
-                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=ProblemPanel}"></Frame>
+                <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=ProblemPanel}"></Frame>
             </TabItem>
             <TabItem Header="Attachment">
-                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=AttachmentPanel}"></Frame>
+                <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=AttachmentPanel}"></Frame>
             </TabItem>
             <TabItem Header="Panel Schedule">
-                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=PanelSchedulePanel}"></Frame>
+                <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=PanelSchedulePanel}"></Frame>
             </TabItem>
             <TabItem Header="Work Form ">
-                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=WorkFormPanel}"></Frame>
+                <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=WorkFormPanel}"></Frame>
             </TabItem>
             <TabItem Header="Customer Input ">
-                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=CustomerInputPanel}"></Frame>
+                <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=CustomerInputPanel}"></Frame>
             </TabItem>
             <TabItem Header="Internal Note">
-                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=InternalNotePanel}"></Frame>
+                <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=InternalNotePanel}"></Frame>
             </TabItem>
             <TabItem Header="Safety Instruction">
-                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=SafetyInstructionPanel}"></Frame>
+                <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=SafetyInstructionPanel}"></Frame>
             </TabItem>
         </TabControl>
     </Grid>

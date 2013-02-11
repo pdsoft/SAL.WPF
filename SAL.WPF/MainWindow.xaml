@@ -1,0 +1,24 @@
+﻿<Window x:Class="SAL.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="730" Width="1280" 
+        Title="{Binding Path=DisplayName}" 
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Normal">
+    <Window.Resources>
+        <ResourceDictionary Source="Resource.xaml" />
+    </Window.Resources>
+    <Grid Margin="4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="4"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Style="{StaticResource BorderStyle}" Width="220">
+            <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=LeftPanel}"></Frame>
+        </Border>
+        <Border Grid.Column="2" Style="{StaticResource BorderStyle}">
+            <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=RightPanel}"></Frame>
+        </Border>
+    </Grid>
+</Window>
