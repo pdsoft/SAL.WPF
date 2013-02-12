@@ -53,19 +53,19 @@ namespace SAL.WPF.ViewModel
         // by Fred, 2-5-2013
         #region Command Property
 
-        private ICommand _selectionChangedCommand;
-        public ICommand SelectionChangedCommand
-        {
-            get
-            {
-                if (_selectionChangedCommand == null)
-                {
-                    _selectionChangedCommand = new RelayCommand(OnSelectionChanged, CanSelectionChanged);
-                }
+        //private ICommand _selectionChangedCommand;
+        //public ICommand SelectionChangedCommand
+        //{
+        //    get
+        //    {
+        //        if (_selectionChangedCommand == null)
+        //        {
+        //            _selectionChangedCommand = new RelayCommand(OnSelectionChanged);
+        //        }
 
-                return _selectionChangedCommand;
-            }
-        }
+        //        return _selectionChangedCommand;
+        //    }
+        //}
 
         #endregion
 
@@ -82,6 +82,8 @@ namespace SAL.WPF.ViewModel
             this.Parent = parent;           // by Fred, 2-6-2013
 
             SetSiteEquipmentPage();
+            SetSiteVisitPage();
+            SetContactPage();
         }
 
         #endregion
@@ -116,27 +118,22 @@ namespace SAL.WPF.ViewModel
         #region Command Method
 
         // command function, called by the xxxCommand.Execute.cs
-        private void OnSelectionChanged(object obj)
-        {
-            switch(SelectedItem.Header.ToString())
-            {
-                case "Visit":
-                    SetSiteVisitPage();
-                    break;
-                case "Contact":
-                    SetContactPage();
-                    break;
-                case "Equipment":
-                default:
-                    SetSiteEquipmentPage();
-                    break;
-            }
-        }
-
-        private bool CanSelectionChanged(object o)
-        {
-            return true; ;
-        }
+        //private void OnSelectionChanged(object obj)
+        //{
+        //    switch(SelectedItem.Header.ToString())
+        //    {
+        //        case "Visit":
+        //            SetSiteVisitPage();
+        //            break;
+        //        case "Contact":
+        //            SetContactPage();
+        //            break;
+        //        case "Equipment":
+        //        default:
+        //            SetSiteEquipmentPage();
+        //            break;
+        //    }
+        //}
 
         #endregion
     }

@@ -6,12 +6,17 @@
       xmlns:Behaviour="clr-namespace:SAL.WPF.Behaviour"
       mc:Ignorable="d" 
 	Title="SiteEquipmentPage">
-    <Grid>
+    <Page.Resources>
+        <ResourceDictionary Source="../Resource.xaml" />
+    </Page.Resources>
+    <Grid Margin="4">
         <Grid.RowDefinitions>
-            <RowDefinition Height="35"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="4"/>
+            <RowDefinition Height="200"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <DockPanel Grid.Row="0" Margin="4" >
+        <DockPanel Grid.Row="0">
             <Label Content="Equipment Type: "/>
             <ComboBox Width="200"/>
             <Label Content="Location: "/>
@@ -31,13 +36,18 @@
                 </TextBlock>
             </TextBlock>
         </DockPanel>
-        <ListView Grid.Row="1" Margin="4" HorizontalAlignment="Stretch" Behaviour:GridViewColumnResize.Enabled="True" ItemsSource="{Binding Path=SiteEquipmentList}" IsSynchronizedWithCurrentItem="True">
+        <ListView Grid.Row="2" HorizontalAlignment="Stretch" Behaviour:GridViewColumnResize.Enabled="True" ItemsSource="{Binding Path=SiteEquipmentList}" IsSynchronizedWithCurrentItem="False">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="Control">
+                    <Setter Property="Focusable" Value="False" />
+                </Style>
+            </ListBox.ItemContainerStyle>
             <ListView.View>
-                <GridView>
-                    <GridViewColumn Behaviour:GridViewColumnResize.Width="*" Header="AssetID">
+                <GridView ColumnHeaderContainerStyle="{StaticResource GridViewColumnHeaderStyle}">
+                    <GridViewColumn Behaviour:GridViewColumnResize.Width="*" Header="Asset ID">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Margin="2,6" HorizontalAlignment="Stretch" >
+                                <TextBlock HorizontalAlignment="Stretch" >
                                     <Hyperlink Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ListView}, Path=DataContext.EquipmentCommand}" CommandParameter="{Binding}">
                                         <TextBlock Text="{Binding Path=AssetID}" />
                                     </Hyperlink>
@@ -97,5 +107,39 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <DataGrid Grid.Row="3" IsReadOnly="True" ColumnHeaderStyle="{StaticResource DataGridColumnHeaderStyle}" HorizontalGridLinesBrush="LightGray" VerticalGridLinesBrush="LightGray" CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding SiteEquipmentList}">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="*" Header="Asset ID">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <Hyperlink Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}, Path=DataContext.EquipmentCommand}" CommandParameter="{Binding}">
+                                    <TextBlock Text="{Binding Path=AssetID}" />
+                                </Hyperlink>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Width="*" Header="Fed Form" Binding="{Binding FedForm}" />
+                <DataGridTextColumn Width="*" Header="Type" Binding="{Binding Typet}" />
+                <DataGridTextColumn Width="*" Header="Location" Binding="{Binding Location}" />
+                <DataGridTextColumn Width="*" Header="Last Visit" Binding="{Binding LastVisit}" />
+                <DataGridTextColumn Width="*" Header="Problem Exist" Binding="{Binding ProblemExist}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="50" Content="Edit" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=DataGrid}, Path=DataContext.EditCommand}" CommandParameter="{Binding}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Width="50" Content="Copy"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Page>
