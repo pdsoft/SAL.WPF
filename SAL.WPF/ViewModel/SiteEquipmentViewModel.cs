@@ -5,7 +5,7 @@ using System.Text;
 using System.Windows;
 using SAL.Model;
 using System.Collections.ObjectModel;
-using VendingManager.Command;
+using SAL.WPF.Command;
 using System.Windows.Input;
 using SAL.WPF.View;
 
@@ -113,31 +113,31 @@ namespace SAL.WPF.ViewModel
         // command function, called by the xxxCommand.Execute.cs
         private void OnAddOne(object obj)
         {
-            var addSiteEquipmentPage = new EditSiteEquipmentPage();
-            addSiteEquipmentPage.DataContext = new EditSiteEquipmentViewModel(_parent);
-            _parent.SiteEquipmentPage = addSiteEquipmentPage;
+            //var addSiteEquipmentPage = new EditSiteEquipmentPage();
+            //addSiteEquipmentPage.DataContext = new EditSiteEquipmentViewModel(_parent);
+            //_parent.SiteEquipmentPage = addSiteEquipmentPage;
         }
 
         private void OnAddBatch(object obj)
         {
-            var addSiteBatchEquipmentPage = new AddBatchSiteEquipmentPage();
-            addSiteBatchEquipmentPage.DataContext = new AddBatchSiteEquipmentViewModel(_parent);
-            _parent.SiteEquipmentPage = addSiteBatchEquipmentPage;
+            //var addSiteBatchEquipmentPage = new AddBatchSiteEquipmentPage();
+            //addSiteBatchEquipmentPage.DataContext = new AddBatchSiteEquipmentViewModel(_parent);
+            //_parent.SiteEquipmentPage = addSiteBatchEquipmentPage;
         }
 
         // by Fred, 2-6-20113
         private void OnEquipment(object obj)
         {
             var equipmentPage = new EquipmentPage();
-            equipmentPage.DataContext = new EquipmentViewModel();
-            _parent.Parent.RightPanel = equipmentPage;
+            equipmentPage.DataContext = new EquipmentViewModel_Old();
+            //_parent.Parent.RightPanel = equipmentPage;
         }
 
         private void OnEdit(object obj)
         {
-            var editSiteEquipmentPage = new EditSiteEquipmentPage();
-            editSiteEquipmentPage.DataContext = new EditSiteEquipmentViewModel(_parent, obj as Equipment);
-            _parent.SiteEquipmentPage = editSiteEquipmentPage;
+            //var editSiteEquipmentPage = new EditSiteEquipmentPage();
+            //editSiteEquipmentPage.DataContext = new EditSiteEquipmentViewModel(_parent, obj as Equipment);
+            //_parent.SiteEquipmentPage = editSiteEquipmentPage;
         }
 
         #endregion

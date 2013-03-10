@@ -5,7 +5,7 @@ using System.Text;
 using System.Collections.ObjectModel;
 using SAL.Model;
 using System.Windows;
-using VendingManager.Command;
+using SAL.WPF.Command;
 
 namespace SAL.WPF.ViewModel
 {
@@ -40,7 +40,7 @@ namespace SAL.WPF.ViewModel
             {
                 if (_addCommand == null)
                 {
-                    _addCommand = new CommandViewModel("Add Problem", new RelayCommand(param => OnAdd()));
+                    _addCommand = new CommandViewModel(new RelayCommand(param => OnAdd()), "Add Problem");
                 }
                 return _addCommand;
             }
@@ -52,7 +52,7 @@ namespace SAL.WPF.ViewModel
             {
                 if (_editCommand == null)
                 {
-                    _editCommand = new CommandViewModel("Edit", new RelayCommand(param => OnEdit()));
+                    _editCommand = new CommandViewModel(new RelayCommand(param => OnEdit()), "Edit");
                 }
                 return _editCommand;
             }
@@ -64,7 +64,7 @@ namespace SAL.WPF.ViewModel
             {
                 if (_deleteCommand == null)
                 {
-                    _deleteCommand = new CommandViewModel("Delete", new RelayCommand(param => OnDelete()));
+                    _deleteCommand = new CommandViewModel(new RelayCommand(param => OnDelete()), "Delete");
                 }
                 return _deleteCommand;
             }

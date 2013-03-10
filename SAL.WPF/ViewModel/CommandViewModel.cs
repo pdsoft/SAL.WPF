@@ -8,7 +8,7 @@ namespace SAL.WPF.ViewModel
     /// </summary>
     public class CommandViewModel : ViewModelBase
     {
-        public CommandViewModel(string displayName, ICommand command)
+        public CommandViewModel(ICommand command, string displayName = null)
         {
             if (command == null)
             {

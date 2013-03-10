@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using SAL.Model;
-using VendingManager.Command;
+using SAL.WPF.Command;
 using SAL.WPF.View;
 
 namespace SAL.WPF.ViewModel

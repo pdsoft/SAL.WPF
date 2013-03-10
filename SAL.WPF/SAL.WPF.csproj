@@ -38,6 +38,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files (x86)\Microsoft SDKs\Expression\Blend\.NETFramework\v4.0\Libraries\System.Windows.Interactivity.dll</HintPath>
@@ -61,16 +62,40 @@
     </ApplicationDefinition>
     <Compile Include="Behaviour\GridViewColumnResize.cs" />
     <Compile Include="Command\RelayCommand.cs" />
-    <Compile Include="Model\CustomerCheckBox.cs" />
+    <Compile Include="Helper\CustomerRadioButton.cs" />
+    <Compile Include="List\EquipmentTypeList.cs" />
+    <Compile Include="List\LocationList.cs" />
     <Compile Include="Model\Entitiy\Entity_Customer.cs" />
     <Compile Include="Model\Entitiy\Entity_Equipment.cs" />
     <Compile Include="Model\Entitiy\Entity_Site.cs" />
     <Compile Include="Model\Entitiy\Entity_Workflow.cs" />
     <Compile Include="Model\Entitiy\SampleData.cs" />
     <Compile Include="Model\Entitiy\User.cs" />
-    <Compile Include="ViewModel\AddBatchSiteEquipmentViewModel.cs" />
+    <Compile Include="Service\DialogService.cs" />
+    <Compile Include="Service\IDialogService.cs" />
+    <Compile Include="Service\IDialogServiceContract.cs" />
+    <Compile Include="Service\ServiceLocator.cs" />
     <Compile Include="ViewModel\CommandViewModel.cs" />
-    <Compile Include="ViewModel\EditSiteEquipmentViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\AddEditViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\AddressViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\CustomerLeftViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\CustomerRightViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\CustomerViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\AddEditCustomerViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\AddEditSiteViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\EditViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\EquipmentLeftViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\EquipmentRightViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\EquipmentViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\LeftViewModelBase.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\RightViewModelBase.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\SiteLeftViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\SiteRightViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\SiteTab\sTabAddBatchEquipmentViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\SiteTab\sTabAddEditEquipmentViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\SiteTab\sTabEquipmentViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\SiteViewModel.cs" />
+    <Compile Include="ViewModel\CustomerSiteEquipment\CustomerTab\cTabSiteViewModel.cs" />
     <Compile Include="ViewModel\EditContactViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\EquipmentAttachmentViewModel.cs" />
@@ -79,17 +104,43 @@
     <Compile Include="ViewModel\EquipmentNameplateViewModel.cs" />
     <Compile Include="ViewModel\EquipmentProblemViewModel.cs" />
     <Compile Include="ViewModel\EquipmentSpecificationViewModel.cs" />
-    <Compile Include="ViewModel\EquipmentViewModel.cs" />
+    <Compile Include="ViewModel\EquipmentViewModel_Old.cs" />
     <Compile Include="ViewModel\SiteEquipmentViewModel.cs" />
-    <Compile Include="ViewModel\LeftViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\SiteViewModel.cs" />
     <Compile Include="ViewModel\SiteVisitViewModel.cs" />
-    <Compile Include="View\AddBatchSiteEquipmentPage.xaml.cs">
-      <DependentUpon>AddBatchSiteEquipmentPage.xaml</DependentUpon>
+    <Compile Include="View\CustomerSiteEquipment\AddEditCustomerPage.xaml.cs">
+      <DependentUpon>AddEditCustomerPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\EditSiteEquipmentPage.xaml.cs">
-      <DependentUpon>EditSiteEquipmentPage.xaml</DependentUpon>
+    <Compile Include="View\CustomerSiteEquipment\AddEditSitePage.xaml.cs">
+      <DependentUpon>AddEditSitePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerSiteEquipment\AddEditWindow.xaml.cs">
+      <DependentUpon>AddEditWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerSiteEquipment\AddressPage.xaml.cs">
+      <DependentUpon>AddressPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerSiteEquipment\cseLeftPage.xaml.cs">
+      <DependentUpon>cseLeftPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerSiteEquipment\cseRightPage.xaml.cs">
+      <DependentUpon>cseRightPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerSiteEquipment\CustomerSiteEquipmentPage.xaml.cs">
+      <DependentUpon>CustomerSiteEquipmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerSiteEquipment\CustomerTab\cTabSitePage.xaml.cs">
+      <DependentUpon>cTabSitePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerSiteEquipment\SiteTab\sTabAddBatchEquipmentPage.xaml.cs">
+      <DependentUpon>sTabAddBatchEquipmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerSiteEquipment\SiteTab\sTabAddEditEquipmentPage.xaml.cs">
+      <DependentUpon>sTabAddEditEquipmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerSiteEquipment\SiteTab\sTabEquipmentPage.xaml.cs">
+      <DependentUpon>sTabEquipmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditContactPage.xaml.cs">
       <DependentUpon>EditContactPage.xaml</DependentUpon>
@@ -127,15 +178,54 @@
     <Compile Include="View\SiteVisitPage.xaml.cs">
       <DependentUpon>SiteVisitPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowViewModelMapping\IWindowViewModelMappings.cs" />
+    <Compile Include="WindowViewModelMapping\IWindowViewModelMappingsContract.cs" />
+    <Compile Include="WindowViewModelMapping\WindowViewModelMappings.cs" />
     <Page Include="Resource.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddBatchSiteEquipmentPage.xaml">
+    <Page Include="View\CustomerSiteEquipment\AddEditCustomerPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\EditSiteEquipmentPage.xaml">
+    <Page Include="View\CustomerSiteEquipment\AddEditSitePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerSiteEquipment\AddEditWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerSiteEquipment\AddressPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerSiteEquipment\cseLeftPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerSiteEquipment\cseRightPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerSiteEquipment\CustomerSiteEquipmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerSiteEquipment\CustomerTab\cTabSitePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerSiteEquipment\SiteTab\sTabAddBatchEquipmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerSiteEquipment\SiteTab\sTabAddEditEquipmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CustomerSiteEquipment\SiteTab\sTabEquipmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,14 +265,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\SiteEquipmentPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\LeftPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -192,13 +274,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Compile Include="View\LeftPage.xaml.cs">
-      <DependentUpon>LeftPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\SiteEquipmentPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\SitePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,11 +309,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.Config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SAL.EFLib\SAL.EFLib.csproj">
+      <Project>{C2720A57-D94F-4F9A-BB51-701FABE1AAFD}</Project>
+      <Name>SAL.EFLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\return.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

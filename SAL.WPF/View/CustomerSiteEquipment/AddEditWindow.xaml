@@ -1,0 +1,16 @@
+﻿<Window x:Class="SAL.WPF.View.CustomerSiteEquipment.AddEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:service="clr-namespace:SAL.WPF.Service"
+        service:DialogService.IsRegisteredView="True" 
+        Height="400" Width="900"
+        Title="AddEditWindow" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary Source="../../Resource.xaml" />
+    </Window.Resources>
+    <Grid>
+        <Border Style="{StaticResource BorderStyle}">
+            <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=AddEditPage}"></Frame>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,60 @@
+﻿<Page x:Class="SAL.WPF.View.CustomerSiteEquipment.CustomerTab.cTabSitePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+	Title="cTabSitePage">
+    <Page.Resources>
+        <ResourceDictionary Source="../../../Resource.xaml" />
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <DockPanel>
+            <TextBlock Margin="2,6" HorizontalAlignment="Right">
+                    <Hyperlink Command="{Binding Path=AddSiteCommand.Command}">
+                        <TextBlock Text="{Binding Path=AddSiteCommand.DisplayName}" />
+                    </Hyperlink>
+                </TextBlock>
+        </DockPanel>
+        <ListView Grid.Row="1" ItemsSource="{Binding Path=ItemList}" IsSynchronizedWithCurrentItem="True" >
+            <ListView.View>
+                <GridView ColumnHeaderContainerStyle="{StaticResource GridViewColumnHeaderStyle}">
+                    <GridViewColumn Header="Site Name">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock HorizontalAlignment="Stretch" >
+                                    <Hyperlink Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ListView}, Path=DataContext.SelectedCommand.Command}" CommandParameter="{Binding}">
+                                        <TextBlock Text="{Binding Path=SiteName}" />
+                                    </Hyperlink>
+                                </TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Sales Rep" DisplayMemberBinding="{Binding Path=ExpectDate}"/>
+                    <GridViewColumn Header="Primary Contact" DisplayMemberBinding="{Binding Path=ActualDate}"/>
+                    <GridViewColumn Header="Site Status" DisplayMemberBinding="{Binding Path=Status}"/>
+                    <GridViewColumn Header="Facility Size" DisplayMemberBinding="{Binding Path=FacilitySize}"/>
+                    <GridViewColumn Header="Last Visit" DisplayMemberBinding="{Binding Path=Status}"/>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Width="50" Content="Edit" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=ListView}, Path=DataContext.EditCommand}" CommandParameter="{Binding}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Width="50" Content="Delete"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

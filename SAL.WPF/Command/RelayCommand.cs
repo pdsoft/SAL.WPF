@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Windows.Input;
 
-namespace VendingManager.Command
+namespace SAL.WPF.Command
 {
 	/// <summary>
 	/// Code from http://msdn.microsoft.com/en-us/magazine/dd419663.aspx

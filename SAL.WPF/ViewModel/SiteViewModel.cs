@@ -6,7 +6,7 @@ using System.Windows.Controls;
 using System.Windows;
 using SAL.WPF.View;
 using System.Windows.Input;
-using VendingManager.Command;
+using SAL.WPF.Command;
 
 namespace SAL.WPF.ViewModel
 {
@@ -66,12 +66,6 @@ namespace SAL.WPF.ViewModel
         //        return _selectionChangedCommand;
         //    }
         //}
-
-        #endregion
-
-        #region Property
-
-        public MainViewModel Parent { get; set; }
 
         #endregion
 

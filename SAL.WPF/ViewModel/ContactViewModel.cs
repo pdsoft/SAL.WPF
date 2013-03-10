@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 using SAL.Model;
 using System.Windows;
 using System.Windows.Input;
-using VendingManager.Command;
+using SAL.WPF.Command;
 using SAL.WPF.View;
 
 namespace SAL.WPF.ViewModel

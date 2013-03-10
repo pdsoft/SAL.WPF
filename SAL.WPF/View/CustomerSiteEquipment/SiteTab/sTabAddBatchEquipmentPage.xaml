@@ -1,0 +1,65 @@
+﻿<Page x:Class="SAL.WPF.View.CustomerSiteEquipment.SiteTab.sTabAddBatchEquipmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+	Title="sTabAddBatchEquipmentPage">
+<Grid Background="#2D000000" Width="1000" Height="200">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="15"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="140"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="70"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="90"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="8" Content="Add Batch Equipment" Background="Blue" Foreground="White" />
+        <Label Grid.Row="2" Grid.Column="0" Content="Equipment:" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" SelectedValue="{Binding Path=Equipment1.EquipmentTypeID}" ItemsSource="{Binding Path=EquipmentTypeList}" DisplayMemberPath="TemplateName" SelectedValuePath="row_id" IsSynchronizedWithCurrentItem="True"/>
+        <Label Grid.Row="3" Grid.Column="0" Content="Equipment:" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="3" Grid.Column="1" SelectedValue="{Binding Path=Equipment2.EquipmentTypeID}" ItemsSource="{Binding Path=EquipmentTypeList}" DisplayMemberPath="TemplateName" SelectedValuePath="row_id" IsSynchronizedWithCurrentItem="True"/>
+        <Label Grid.Row="4" Grid.Column="0" Content="Equipment:" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" SelectedValue="{Binding Path=Equipment3.EquipmentTypeID}" ItemsSource="{Binding Path=EquipmentTypeList}" DisplayMemberPath="TemplateName" SelectedValuePath="row_id" IsSynchronizedWithCurrentItem="True"/>
+        <Label Grid.Row="5" Grid.Column="0" Content="Equipment:" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="5" Grid.Column="1" SelectedValue="{Binding Path=Equipment4.EquipmentTypeID}" ItemsSource="{Binding Path=EquipmentTypeList}" DisplayMemberPath="TemplateName" SelectedValuePath="row_id" IsSynchronizedWithCurrentItem="True"/>
+        <Label Grid.Row="2" Grid.Column="2" Content="Number of Equipment:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="2" Grid.Column="3" Text="{Binding Path=Equipment1.LocationID}"/>
+        <Label Grid.Row="3" Grid.Column="2" Content="Number of Equipment:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="3" Grid.Column="3"/>
+        <Label Grid.Row="4" Grid.Column="2" Content="Number of Equipment:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="4" Grid.Column="3"/>
+        <Label Grid.Row="5" Grid.Column="2" Content="Number of Equipment:" HorizontalAlignment="Right"/>
+        <TextBox Grid.Row="5" Grid.Column="3"/>
+        <Label Grid.Row="2" Grid.Column="4" Content="Location:" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="2" Grid.Column="5" SelectedValue="{Binding Path=Equipment1.LocationID}" ItemsSource="{Binding Path=EquipmentTypeList}" DisplayMemberPath="TemplateName" SelectedValuePath="row_id" IsSynchronizedWithCurrentItem="True"/>
+        <Label Grid.Row="3" Grid.Column="4" Content="Location:" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="3" Grid.Column="5" SelectedValue="{Binding Path=Equipment2.LocationID}" ItemsSource="{Binding Path=EquipmentTypeList}" DisplayMemberPath="TemplateName" SelectedValuePath="row_id" IsSynchronizedWithCurrentItem="True"/>
+        <Label Grid.Row="4" Grid.Column="4" Content="Location:" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="4" Grid.Column="5" SelectedValue="{Binding Path=Equipment3.LocationID}" ItemsSource="{Binding Path=EquipmentTypeList}" DisplayMemberPath="TemplateName" SelectedValuePath="row_id" IsSynchronizedWithCurrentItem="True"/>
+        <Label Grid.Row="5" Grid.Column="4" Content="Location:" HorizontalAlignment="Right"/>
+        <ComboBox Grid.Row="5" Grid.Column="5" SelectedValue="{Binding Path=Equipment4.LocationID}" ItemsSource="{Binding Path=EquipmentTypeList}" DisplayMemberPath="TemplateName" SelectedValuePath="row_id" IsSynchronizedWithCurrentItem="True"/>
+        <Label Grid.Row="2" Grid.Column="6" Content="Is Container:" HorizontalAlignment="Right"/>
+        <CheckBox Grid.Row="2" Grid.Column="7" VerticalAlignment="Center" IsChecked="{Binding Path=Equipment1.isContainer}"/>
+        <Label Grid.Row="3" Grid.Column="6" Content="Is Container:" HorizontalAlignment="Right"/>
+        <CheckBox Grid.Row="3" Grid.Column="7" VerticalAlignment="Center" IsChecked="{Binding Path=Equipment2.isContainer}"/>
+        <Label Grid.Row="4" Grid.Column="6" Content="Is Container:" HorizontalAlignment="Right"/>
+        <CheckBox Grid.Row="4" Grid.Column="7" VerticalAlignment="Center" IsChecked="{Binding Path=Equipment3.isContainer}"/>
+        <Label Grid.Row="5" Grid.Column="6" Content="Is Container:" HorizontalAlignment="Right"/>
+        <CheckBox Grid.Row="5" Grid.Column="7" VerticalAlignment="Center" IsChecked="{Binding Path=Equipment4.isContainer}"/>
+        <Button Grid.Row="7" Grid.Column="2" Width="60" Content="{Binding Path=SaveCommand.DisplayName}" Command="{Binding Path=SaveCommand.Command}"/>
+        <Button Grid.Row="7" Grid.Column="4" Width="60" Content="{Binding Path=CloseCommand.DisplayName}" Command="{Binding Path=CloseCommand.Command}"/>
+    </Grid>
+</Page>

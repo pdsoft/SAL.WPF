@@ -1,0 +1,2460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SALModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SALModelStoreContainer">
+          <EntitySet Name="Address" EntityType="SALModel.Store.Address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Agreement" EntityType="SALModel.Store.Agreement" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Attachment" EntityType="SALModel.Store.Attachment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Attachment_ImageThumbNail" EntityType="SALModel.Store.Attachment_ImageThumbNail" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Attribute_Template" EntityType="SALModel.Store.Attribute_Template" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contact" EntityType="SALModel.Store.Contact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Customer" EntityType="SALModel.Store.Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Equipment" EntityType="SALModel.Store.Equipment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Equipment_InstallationAttributeValues" EntityType="SALModel.Store.Equipment_InstallationAttributeValues" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EquipmentCategory" EntityType="SALModel.Store.EquipmentCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EquipmentType" EntityType="SALModel.Store.EquipmentType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EquipmentType_Attribute" EntityType="SALModel.Store.EquipmentType_Attribute" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Form_Template" EntityType="SALModel.Store.Form_Template" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Location" EntityType="SALModel.Store.Location" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Manufacturer" EntityType="SALModel.Store.Manufacturer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Model" EntityType="SALModel.Store.Model" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Problem_Template" EntityType="SALModel.Store.Problem_Template" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="QuickLinkLog" EntityType="SALModel.Store.QuickLinkLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Site" EntityType="SALModel.Store.Site" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Site_RevisitSchedule" EntityType="SALModel.Store.Site_RevisitSchedule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteVisit" EntityType="SALModel.Store.SiteVisit" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteVisitAssignment" EntityType="SALModel.Store.SiteVisitAssignment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteVisitEquipment" EntityType="SALModel.Store.SiteVisitEquipment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteVisitEquipment_Attributes" EntityType="SALModel.Store.SiteVisitEquipment_Attributes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteVisitEquipment_Problems" EntityType="SALModel.Store.SiteVisitEquipment_Problems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteVisitEquipment_WorkLog" EntityType="SALModel.Store.SiteVisitEquipment_WorkLog" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteVisitSchedule" EntityType="SALModel.Store.SiteVisitSchedule" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SiteVisitTasking" EntityType="SALModel.Store.SiteVisitTasking" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="SALModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Task_Template" EntityType="SALModel.Store.Task_Template" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TaskTemplate_x_AttributeTemplate" EntityType="SALModel.Store.TaskTemplate_x_AttributeTemplate" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblLOV" EntityType="SALModel.Store.tblLOV" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblLOV_Category" EntityType="SALModel.Store.tblLOV_Category" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User" EntityType="SALModel.Store.User" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="User_role" EntityType="SALModel.Store.User_role" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Agreement_Customer" Association="SALModel.Store.FK_Agreement_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Agreement" EntitySet="Agreement" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Site" Association="SALModel.Store.FK_Equipment_Site">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Equipment" EntitySet="Equipment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Site" Association="SALModel.Store.FK_Location_Site">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="Location" EntitySet="Location" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Model_Manufacturer" Association="SALModel.Store.FK_Model_Manufacturer">
+            <End Role="Manufacturer" EntitySet="Manufacturer" />
+            <End Role="Model" EntitySet="Model" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Site_Customer" Association="SALModel.Store.FK_Site_Customer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Site" EntitySet="Site" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiteVisit_Site" Association="SALModel.Store.FK_SiteVisit_Site">
+            <End Role="Site" EntitySet="Site" />
+            <End Role="SiteVisit" EntitySet="SiteVisit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiteVisitEquipmentProblem_Equipment" Association="SALModel.Store.FK_SiteVisitEquipmentProblem_Equipment">
+            <End Role="Equipment" EntitySet="Equipment" />
+            <End Role="SiteVisitEquipment_Problems" EntitySet="SiteVisitEquipment_Problems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiteVisitTasking_Equipment" Association="SALModel.Store.FK_SiteVisitTasking_Equipment">
+            <End Role="Equipment" EntitySet="Equipment" />
+            <End Role="SiteVisitTasking" EntitySet="SiteVisitTasking" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="100" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="100" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Province" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="15" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="30" />
+          <Property Name="fax" Type="nvarchar" MaxLength="15" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" />
+          <Property Name="website" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Agreement">
+          <Key>
+            <PropertyRef Name="ROW_ID" />
+          </Key>
+          <Property Name="ROW_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="AgreementNumber" Type="nvarchar" MaxLength="35" />
+          <Property Name="AgreementPrice" Type="decimal" Precision="9" Scale="2" />
+          <Property Name="dt_agreement" Type="date" />
+          <Property Name="dt_effective" Type="date" />
+          <Property Name="dt_expiry" Type="date" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_ID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_ID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="par_obj_name" Type="nvarchar" MaxLength="15" />
+          <Property Name="par_obj_ID" Type="int" />
+          <Property Name="Category_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="FileType_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="85" />
+          <Property Name="FilePath" Type="nvarchar" MaxLength="150" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Attachment_ImageThumbNail">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Attachment_ID" Type="int" />
+          <Property Name="ThumbNail" Type="image" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Attribute_Template">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ATT_Name" Type="nvarchar" MaxLength="60" />
+          <Property Name="ATT_Unit" Type="nvarchar" MaxLength="50" />
+          <Property Name="ATT_TypeCD" Type="nvarchar" MaxLength="15" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ROW_ID" />
+          </Key>
+          <Property Name="ROW_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContactName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Type_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="Title_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="address_ID" Type="int" />
+          <Property Name="par_obj_name" Type="nvarchar" MaxLength="15" />
+          <Property Name="par_obj_ID" Type="int" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="35" />
+          <Property Name="fax" Type="nvarchar" MaxLength="35" />
+          <Property Name="email" Type="nvarchar" MaxLength="60" />
+          <Property Name="BestContactMethod" Type="nvarchar" MaxLength="200" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="500" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_by_ID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_ID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Parent_ID" Type="int" />
+          <Property Name="Address1" Type="nvarchar" MaxLength="80" />
+          <Property Name="Address2" Type="nvarchar" MaxLength="80" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Province" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="15" />
+          <Property Name="Country" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="35" />
+          <Property Name="fax" Type="nvarchar" MaxLength="35" />
+          <Property Name="email" Type="nvarchar" MaxLength="60" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="500" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_by_ID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_ID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="address_id" Type="int" />
+          <Property Name="PrimaryContactID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+          <Property Name="BillAddress_id" Type="int" />
+          <Property Name="business_type_cd" Type="nvarchar" MaxLength="15" />
+          <Property Name="status_cd" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="parent_ID" Type="int" />
+          <Property Name="SiteID" Type="int" />
+          <Property Name="LocationID" Type="int" />
+          <Property Name="EquipmentTypeID" Type="int" />
+          <Property Name="ModelID" Type="int" />
+          <Property Name="Asset_ID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Application" Type="nvarchar" MaxLength="255" />
+          <Property Name="SafetyNotes" Type="nvarchar" MaxLength="1024" />
+          <Property Name="YearBuilt" Type="int" />
+          <Property Name="flg_Energized" Type="bit" />
+          <Property Name="isCritical" Type="bit" />
+          <Property Name="NPVolts" Type="int" />
+          <Property Name="isStartLoop" Type="bit" />
+          <Property Name="isContainer" Type="bit" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_by_ID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_ID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Equipment_InstallationAttributeValues">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentID" Type="int" />
+          <Property Name="AttributeTemplateID" Type="int" />
+          <Property Name="NumberValue" Type="float" />
+          <Property Name="TextValue" Type="nvarchar" MaxLength="255" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="EquipmentCategory">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="nvarchar" MaxLength="100" />
+          <Property Name="DisplayOrder" Type="int" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="50" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="EquipmentType">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentCategoryID" Type="int" />
+          <Property Name="TemplateName" Type="nvarchar" MaxLength="100" />
+          <Property Name="TeggEquipCode" Type="int" />
+          <Property Name="TagPrefix" Type="nchar" MaxLength="8" />
+          <Property Name="isMediumVoltage" Type="bit" />
+          <Property Name="isPanel" Type="bit" />
+          <Property Name="isRelay" Type="bit" />
+          <Property Name="isContainOil" Type="bit" />
+          <Property Name="ReplacementCost" Type="money" />
+          <Property Name="PremiumFactor" Type="decimal" Precision="5" Scale="5" />
+          <Property Name="isDefaultColor" Type="bit" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_by_ID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_ID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+          <Property Name="category_cd" Type="nvarchar" MaxLength="15" />
+          <Property Name="Merge_to_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="EquipmentType_Attribute">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentTypeID" Type="int" />
+          <Property Name="AttributeTemplateID" Type="int" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Form_Template">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+          <Property Name="FilePath" Type="varchar" MaxLength="250" />
+          <Property Name="FormType_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="status_flg" Type="char" MaxLength="1" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="modification_um" Type="int" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteID" Type="int" />
+          <Property Name="LocationName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="500" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Model">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ManufacturerID" Type="int" Nullable="false" />
+          <Property Name="ModelName" Type="nvarchar" MaxLength="50" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Problem_Template">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProblemType_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="category_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="ProblemDescription" Type="nvarchar" MaxLength="1024" />
+          <Property Name="ConsequencesComments" Type="nvarchar" MaxLength="1024" />
+          <Property Name="RecommendationsComments" Type="nvarchar" MaxLength="1024" />
+          <Property Name="status_flg" Type="char" MaxLength="1" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_by_ID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_ID" Type="int" />
+          <Property Name="modification_um" Type="int" />
+          <Property Name="rowguid" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuickLinkLog">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisit_ID" Type="int" />
+          <Property Name="Customer_ID" Type="int" />
+          <Property Name="dt_sent" Type="datetime" />
+          <Property Name="dt_expiry" Type="datetime" />
+          <Property Name="verification_code" Type="nvarchar" MaxLength="100" />
+          <Property Name="times_login" Type="int" Nullable="false" />
+          <Property Name="login_ip" Type="nvarchar" MaxLength="50" />
+          <Property Name="login_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="dt_last_updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="ROW_ID" />
+          </Key>
+          <Property Name="ROW_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="AddressID" Type="int" />
+          <Property Name="phone" Type="nvarchar" MaxLength="35" />
+          <Property Name="fax" Type="nvarchar" MaxLength="35" />
+          <Property Name="website" Type="nvarchar" MaxLength="100" />
+          <Property Name="SalesRepID" Type="int" />
+          <Property Name="PrimaryContactID" Type="int" />
+          <Property Name="SiteStatusCD" Type="nvarchar" MaxLength="15" />
+          <Property Name="FacilitySize" Type="int" />
+          <Property Name="YearBuilt" Type="int" />
+          <Property Name="SystemAge" Type="int" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_by_ID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_ID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="SiteComment" Type="nvarchar" MaxLength="500" />
+          <Property Name="BillAddress_ID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Site_RevisitSchedule">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteID" Type="int" />
+          <Property Name="Preset_by_SiteVisitID" Type="int" />
+          <Property Name="statusCD" Type="nvarchar" MaxLength="15" />
+          <Property Name="dt_expect" Type="date" />
+          <Property Name="expect_duration" Type="int" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SiteVisit">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteID" Type="int" />
+          <Property Name="AgreementID" Type="int" />
+          <Property Name="JobNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="statusCD" Type="nvarchar" MaxLength="15" />
+          <Property Name="JobType_cd" Type="nvarchar" MaxLength="15" />
+          <Property Name="dt_start_exp" Type="datetime" />
+          <Property Name="dt_complete_exp" Type="datetime" />
+          <Property Name="dt_start_act" Type="datetime" />
+          <Property Name="dt_complete_act" Type="datetime" />
+          <Property Name="flg_Plan" Type="nchar" MaxLength="1" />
+          <Property Name="SpecialInstruction" Type="nvarchar" MaxLength="1024" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_by_ID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_ID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SiteVisitAssignment">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitID" Type="int" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="isLead" Type="bit" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SiteVisitEquipment">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EquipementID" Type="int" />
+          <Property Name="SiteVisitID" Type="int" />
+          <Property Name="TaskTemplateID" Type="int" />
+          <Property Name="TaskType_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="TaskStatus_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SiteVisitEquipment_Attributes">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitEquipmentID" Type="int" />
+          <Property Name="AttributeTemplateID" Type="int" />
+          <Property Name="ReadingNumberValue" Type="float" />
+          <Property Name="ReadingTextValue" Type="nvarchar" MaxLength="255" />
+          <Property Name="ReadingTime" Type="datetime" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SiteVisitEquipment_Problems">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitEquipmentID" Type="int" />
+          <Property Name="ProblemCategoryCD" Type="nvarchar" MaxLength="15" />
+          <Property Name="ProblemDescription" Type="nvarchar" MaxLength="1024" />
+          <Property Name="isImmediateHazard" Type="bit" />
+          <Property Name="HazardOptions" Type="nvarchar" MaxLength="50" />
+          <Property Name="isCustomerNotifiedImmediate" Type="bit" />
+          <Property Name="ConsequenceOptions" Type="nvarchar" MaxLength="50" />
+          <Property Name="ConsequenceComment" Type="nvarchar" MaxLength="1024" />
+          <Property Name="RecommendationOptions" Type="nvarchar" MaxLength="50" />
+          <Property Name="RecommendationComment" Type="nvarchar" MaxLength="1024" />
+          <Property Name="FixOptions" Type="nvarchar" MaxLength="50" />
+          <Property Name="fix_Comments" Type="nvarchar" MaxLength="1024" />
+          <Property Name="isEstimateRequired" Type="bit" />
+          <Property Name="isProblemCorrected" Type="bit" />
+          <Property Name="dt_problemFound" Type="date" />
+          <Property Name="dt_corrected" Type="date" />
+          <Property Name="standard" Type="nvarchar" MaxLength="50" />
+          <Property Name="section" Type="nvarchar" MaxLength="50" />
+          <Property Name="SeverityCD" Type="nvarchar" MaxLength="15" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_by_ID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_ID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SiteVisitEquipment_WorkLog">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitEquipmentID" Type="int" />
+          <Property Name="WorkCategoryCD" Type="nvarchar" MaxLength="15" />
+          <Property Name="WorkStatusCD" Type="nvarchar" MaxLength="15" />
+          <Property Name="WorkDescription" Type="nvarchar" MaxLength="1024" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SiteVisitSchedule">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitID" Type="int" />
+          <Property Name="dt_schedule_visit" Type="datetime" />
+          <Property Name="visit_duration" Type="int" />
+          <Property Name="instruction" Type="nvarchar" MaxLength="500" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="ContactID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="SiteVisitTasking">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitID" Type="int" />
+          <Property Name="EquipmentID" Type="int" />
+          <Property Name="TaskDesc" Type="nvarchar" MaxLength="1024" />
+          <Property Name="TaskStatusCD" Type="nvarchar" MaxLength="15" />
+          <Property Name="TaskOrder" Type="int" />
+          <Property Name="isDelete" Type="bit" Nullable="false" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Task_Template">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TaskCategory_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="description" Type="nvarchar" MaxLength="1024" />
+          <Property Name="LaborHours" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_by_ID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_ID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="TaskTemplate_x_AttributeTemplate">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TaskTemplate_ID" Type="int" />
+          <Property Name="AttributeTemplate_ID" Type="int" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="tblLOV">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="category_code" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="LOV_code" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="sequence_num" Type="smallint" Nullable="false" />
+          <Property Name="value" Type="varchar" Nullable="false" MaxLength="150" />
+          <Property Name="alt_value" Type="varchar" MaxLength="150" />
+          <Property Name="select_flg1" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="select_flg2" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="select_flg3" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="par_LOV_code" Type="char" MaxLength="10" />
+          <Property Name="workflow_flg" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="Webform_flg" Type="char" Nullable="false" MaxLength="10" />
+          <Property Name="status_flg" Type="char" Nullable="false" MaxLength="1" />
+          <Property Name="dt_created" Type="datetime" Nullable="false" />
+          <Property Name="created_by" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="dt_last_updated" Type="datetime" Nullable="false" />
+          <Property Name="last_updated_by" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="modification_num" Type="smallint" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="tblLOV_Category">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="category" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="code" Type="char" Nullable="false" MaxLength="6" />
+          <Property Name="desc" Type="varchar" MaxLength="500" />
+          <Property Name="add_flg" Type="char" MaxLength="1" />
+          <Property Name="edit_flg" Type="char" MaxLength="1" />
+          <Property Name="dt_created" Type="datetime" Nullable="false" />
+          <Property Name="created_by" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="dt_last_updated" Type="datetime" Nullable="false" />
+          <Property Name="last_updated_by" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="modification_num" Type="smallint" Nullable="false" />
+          <Property Name="display_flg" Type="char" MaxLength="1" />
+          <Property Name="delete_flg" Type="char" MaxLength="1" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ROW_ID" />
+          </Key>
+          <Property Name="ROW_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LoginName" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Domain_IP" Type="nvarchar" MaxLength="50" />
+          <Property Name="DisplayName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Company" Type="nvarchar" MaxLength="100" />
+          <Property Name="Email" Type="nvarchar" MaxLength="80" />
+          <Property Name="UserType_CD" Type="nvarchar" MaxLength="15" />
+          <Property Name="ROLES" Type="nvarchar" MaxLength="80" />
+          <Property Name="dt_expiry" Type="datetime" />
+          <Property Name="status_flg" Type="char" MaxLength="1" />
+          <Property Name="dt_created" Type="datetime" />
+          <Property Name="created_UID" Type="int" />
+          <Property Name="dt_last_updated" Type="datetime" />
+          <Property Name="last_updated_UID" Type="int" />
+          <Property Name="modification_um" Type="int" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="User_role">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="role_code" Type="char" MaxLength="10" />
+          <Property Name="role_name" Type="varchar" MaxLength="100" />
+          <Property Name="role_index" Type="smallint" />
+          <Property Name="note" Type="varchar" MaxLength="100" />
+          <Property Name="dt_created" Type="datetime" Nullable="false" />
+          <Property Name="created_by" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="dt_last_updated" Type="datetime" Nullable="false" />
+          <Property Name="last_updated_by" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="modification_num" Type="smallint" Nullable="false" />
+          <Property Name="RowGuid" Type="uniqueidentifier" />
+        </EntityType>
+        <Association Name="FK_Agreement_Customer">
+          <End Role="Customer" Type="SALModel.Store.Customer" Multiplicity="1" />
+          <End Role="Agreement" Type="SALModel.Store.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="row_id" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Site">
+          <End Role="Site" Type="SALModel.Store.Site" Multiplicity="0..1" />
+          <End Role="Equipment" Type="SALModel.Store.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="ROW_ID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="SiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Site">
+          <End Role="Site" Type="SALModel.Store.Site" Multiplicity="0..1" />
+          <End Role="Location" Type="SALModel.Store.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="ROW_ID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="SiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Model_Manufacturer">
+          <End Role="Manufacturer" Type="SALModel.Store.Manufacturer" Multiplicity="1" />
+          <End Role="Model" Type="SALModel.Store.Model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="row_id" />
+            </Principal>
+            <Dependent Role="Model">
+              <PropertyRef Name="ManufacturerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Site_Customer">
+          <End Role="Customer" Type="SALModel.Store.Customer" Multiplicity="0..1" />
+          <End Role="Site" Type="SALModel.Store.Site" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="row_id" />
+            </Principal>
+            <Dependent Role="Site">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SiteVisit_Site">
+          <End Role="Site" Type="SALModel.Store.Site" Multiplicity="0..1" />
+          <End Role="SiteVisit" Type="SALModel.Store.SiteVisit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="ROW_ID" />
+            </Principal>
+            <Dependent Role="SiteVisit">
+              <PropertyRef Name="SiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SiteVisitEquipmentProblem_Equipment">
+          <End Role="Equipment" Type="SALModel.Store.Equipment" Multiplicity="0..1" />
+          <End Role="SiteVisitEquipment_Problems" Type="SALModel.Store.SiteVisitEquipment_Problems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="row_id" />
+            </Principal>
+            <Dependent Role="SiteVisitEquipment_Problems">
+              <PropertyRef Name="SiteVisitEquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SiteVisitTasking_Equipment">
+          <End Role="Equipment" Type="SALModel.Store.Equipment" Multiplicity="0..1" />
+          <End Role="SiteVisitTasking" Type="SALModel.Store.SiteVisitTasking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="row_id" />
+            </Principal>
+            <Dependent Role="SiteVisitTasking">
+              <PropertyRef Name="EquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SALModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SALEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="SALModel.Address" />
+          <EntitySet Name="Agreements" EntityType="SALModel.Agreement" />
+          <EntitySet Name="Attachments" EntityType="SALModel.Attachment" />
+          <EntitySet Name="Attachment_ImageThumbNail" EntityType="SALModel.Attachment_ImageThumbNail" />
+          <EntitySet Name="Attribute_Template" EntityType="SALModel.Attribute_Template" />
+          <EntitySet Name="Contacts" EntityType="SALModel.Contact" />
+          <EntitySet Name="Customers" EntityType="SALModel.Customer" />
+          <EntitySet Name="Equipments" EntityType="SALModel.Equipment" />
+          <EntitySet Name="Equipment_InstallationAttributeValues" EntityType="SALModel.Equipment_InstallationAttributeValues" />
+          <EntitySet Name="EquipmentCategories" EntityType="SALModel.EquipmentCategory" />
+          <EntitySet Name="EquipmentTypes" EntityType="SALModel.EquipmentType" />
+          <EntitySet Name="EquipmentType_Attribute" EntityType="SALModel.EquipmentType_Attribute" />
+          <EntitySet Name="Form_Template" EntityType="SALModel.Form_Template" />
+          <EntitySet Name="Locations" EntityType="SALModel.Location" />
+          <EntitySet Name="Manufacturers" EntityType="SALModel.Manufacturer" />
+          <EntitySet Name="Models" EntityType="SALModel.Model" />
+          <EntitySet Name="Problem_Template" EntityType="SALModel.Problem_Template" />
+          <EntitySet Name="QuickLinkLogs" EntityType="SALModel.QuickLinkLog" />
+          <EntitySet Name="Sites" EntityType="SALModel.Site" />
+          <EntitySet Name="Site_RevisitSchedule" EntityType="SALModel.Site_RevisitSchedule" />
+          <EntitySet Name="SiteVisits" EntityType="SALModel.SiteVisit" />
+          <EntitySet Name="SiteVisitAssignments" EntityType="SALModel.SiteVisitAssignment" />
+          <EntitySet Name="SiteVisitEquipments" EntityType="SALModel.SiteVisitEquipment" />
+          <EntitySet Name="SiteVisitEquipment_Attributes" EntityType="SALModel.SiteVisitEquipment_Attributes" />
+          <EntitySet Name="SiteVisitEquipment_Problems" EntityType="SALModel.SiteVisitEquipment_Problems" />
+          <EntitySet Name="SiteVisitEquipment_WorkLog" EntityType="SALModel.SiteVisitEquipment_WorkLog" />
+          <EntitySet Name="SiteVisitSchedules" EntityType="SALModel.SiteVisitSchedule" />
+          <EntitySet Name="SiteVisitTaskings" EntityType="SALModel.SiteVisitTasking" />
+          <EntitySet Name="sysdiagrams" EntityType="SALModel.sysdiagram" />
+          <EntitySet Name="Task_Template" EntityType="SALModel.Task_Template" />
+          <EntitySet Name="TaskTemplate_x_AttributeTemplate" EntityType="SALModel.TaskTemplate_x_AttributeTemplate" />
+          <EntitySet Name="tblLOVs" EntityType="SALModel.tblLOV" />
+          <EntitySet Name="tblLOV_Category" EntityType="SALModel.tblLOV_Category" />
+          <EntitySet Name="Users" EntityType="SALModel.User" />
+          <EntitySet Name="User_role" EntityType="SALModel.User_role" />
+          <AssociationSet Name="FK_Agreement_Customer" Association="SALModel.FK_Agreement_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Agreement" EntitySet="Agreements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Site_Customer" Association="SALModel.FK_Site_Customer">
+            <End Role="Customer" EntitySet="Customers" />
+            <End Role="Site" EntitySet="Sites" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipment_Site" Association="SALModel.FK_Equipment_Site">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Equipment" EntitySet="Equipments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiteVisitEquipmentProblem_Equipment" Association="SALModel.FK_SiteVisitEquipmentProblem_Equipment">
+            <End Role="Equipment" EntitySet="Equipments" />
+            <End Role="SiteVisitEquipment_Problems" EntitySet="SiteVisitEquipment_Problems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiteVisitTasking_Equipment" Association="SALModel.FK_SiteVisitTasking_Equipment">
+            <End Role="Equipment" EntitySet="Equipments" />
+            <End Role="SiteVisitTasking" EntitySet="SiteVisitTaskings" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Location_Site" Association="SALModel.FK_Location_Site">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Model_Manufacturer" Association="SALModel.FK_Model_Manufacturer">
+            <End Role="Manufacturer" EntitySet="Manufacturers" />
+            <End Role="Model" EntitySet="Models" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SiteVisit_Site" Association="SALModel.FK_SiteVisit_Site">
+            <End Role="Site" EntitySet="Sites" />
+            <End Role="SiteVisit" EntitySet="SiteVisits" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Address1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Address2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Province" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+          <Property Name="Phone" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="website" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Agreement">
+          <Key>
+            <PropertyRef Name="ROW_ID" />
+          </Key>
+          <Property Name="ROW_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="AgreementNumber" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="AgreementPrice" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="dt_agreement" Type="DateTime" />
+          <Property Name="dt_effective" Type="DateTime" />
+          <Property Name="dt_expiry" Type="DateTime" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_ID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_ID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+          <NavigationProperty Name="Customer" Relationship="SALModel.FK_Agreement_Customer" FromRole="Agreement" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="par_obj_name" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="par_obj_ID" Type="Int32" />
+          <Property Name="Category_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="FileType_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="FileName" Type="String" MaxLength="85" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Attachment_ImageThumbNail">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Attachment_ID" Type="Int32" />
+          <Property Name="ThumbNail" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Attribute_Template">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ATT_Name" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="ATT_Unit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ATT_TypeCD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ROW_ID" />
+          </Key>
+          <Property Name="ROW_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Type_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Title_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="address_ID" Type="Int32" />
+          <Property Name="par_obj_name" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="par_obj_ID" Type="Int32" />
+          <Property Name="Phone" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="BestContactMethod" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="Comments" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_by_ID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_ID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BusinessName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Parent_ID" Type="Int32" />
+          <Property Name="Address1" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="Address2" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Province" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
+          <Property Name="Comments" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_by_ID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_ID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="address_id" Type="Int32" />
+          <Property Name="PrimaryContactID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+          <Property Name="BillAddress_id" Type="Int32" />
+          <Property Name="business_type_cd" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="status_cd" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Agreements" Relationship="SALModel.FK_Agreement_Customer" FromRole="Customer" ToRole="Agreement" />
+          <NavigationProperty Name="Sites" Relationship="SALModel.FK_Site_Customer" FromRole="Customer" ToRole="Site" />
+        </EntityType>
+        <EntityType Name="Equipment">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="parent_ID" Type="Int32" />
+          <Property Name="SiteID" Type="Int32" />
+          <Property Name="LocationID" Type="Int32" />
+          <Property Name="EquipmentTypeID" Type="Int32" />
+          <Property Name="ModelID" Type="Int32" />
+          <Property Name="Asset_ID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="SerialNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Application" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="SafetyNotes" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="YearBuilt" Type="Int32" />
+          <Property Name="flg_Energized" Type="Boolean" />
+          <Property Name="isCritical" Type="Boolean" />
+          <Property Name="NPVolts" Type="Int32" />
+          <Property Name="isStartLoop" Type="Boolean" />
+          <Property Name="isContainer" Type="Boolean" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_by_ID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_ID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Site" Relationship="SALModel.FK_Equipment_Site" FromRole="Equipment" ToRole="Site" />
+          <NavigationProperty Name="SiteVisitEquipment_Problems" Relationship="SALModel.FK_SiteVisitEquipmentProblem_Equipment" FromRole="Equipment" ToRole="SiteVisitEquipment_Problems" />
+          <NavigationProperty Name="SiteVisitTaskings" Relationship="SALModel.FK_SiteVisitTasking_Equipment" FromRole="Equipment" ToRole="SiteVisitTasking" />
+        </EntityType>
+        <EntityType Name="Equipment_InstallationAttributeValues">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentID" Type="Int32" />
+          <Property Name="AttributeTemplateID" Type="Int32" />
+          <Property Name="NumberValue" Type="Double" />
+          <Property Name="TextValue" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="EquipmentCategory">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DisplayOrder" Type="Int32" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="DisplayName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="EquipmentType">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentCategoryID" Type="Int32" />
+          <Property Name="TemplateName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TeggEquipCode" Type="Int32" />
+          <Property Name="TagPrefix" Type="String" MaxLength="8" Unicode="true" FixedLength="true" />
+          <Property Name="isMediumVoltage" Type="Boolean" />
+          <Property Name="isPanel" Type="Boolean" />
+          <Property Name="isRelay" Type="Boolean" />
+          <Property Name="isContainOil" Type="Boolean" />
+          <Property Name="ReplacementCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PremiumFactor" Type="Decimal" Precision="5" Scale="5" />
+          <Property Name="isDefaultColor" Type="Boolean" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_by_ID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_ID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+          <Property Name="category_cd" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="Merge_to_ID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="EquipmentType_Attribute">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EquipmentTypeID" Type="Int32" />
+          <Property Name="AttributeTemplateID" Type="Int32" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="Form_Template">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TemplateName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="FilePath" Type="String" MaxLength="250" Unicode="false" FixedLength="false" />
+          <Property Name="FormType_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="status_flg" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" />
+          <Property Name="rowguid" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteID" Type="Int32" />
+          <Property Name="LocationName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Comments" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+          <NavigationProperty Name="Site" Relationship="SALModel.FK_Location_Site" FromRole="Location" ToRole="Site" />
+        </EntityType>
+        <EntityType Name="Manufacturer">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+          <NavigationProperty Name="Models" Relationship="SALModel.FK_Model_Manufacturer" FromRole="Manufacturer" ToRole="Model" />
+        </EntityType>
+        <EntityType Name="Model">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ManufacturerID" Type="Int32" Nullable="false" />
+          <Property Name="ModelName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+          <NavigationProperty Name="Manufacturer" Relationship="SALModel.FK_Model_Manufacturer" FromRole="Model" ToRole="Manufacturer" />
+        </EntityType>
+        <EntityType Name="Problem_Template">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProblemType_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="category_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="ProblemDescription" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="ConsequencesComments" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="RecommendationsComments" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="status_flg" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_by_ID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_ID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" />
+          <Property Name="rowguid" Type="Guid" Nullable="false" />
+        </EntityType>
+        <EntityType Name="QuickLinkLog">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisit_ID" Type="Int32" />
+          <Property Name="Customer_ID" Type="Int32" />
+          <Property Name="dt_sent" Type="DateTime" />
+          <Property Name="dt_expiry" Type="DateTime" />
+          <Property Name="verification_code" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="times_login" Type="Int32" Nullable="false" />
+          <Property Name="login_ip" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="login_name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Site">
+          <Key>
+            <PropertyRef Name="ROW_ID" />
+          </Key>
+          <Property Name="ROW_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="AddressID" Type="Int32" />
+          <Property Name="phone" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="35" Unicode="true" FixedLength="false" />
+          <Property Name="website" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="SalesRepID" Type="Int32" />
+          <Property Name="PrimaryContactID" Type="Int32" />
+          <Property Name="SiteStatusCD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="FacilitySize" Type="Int32" />
+          <Property Name="YearBuilt" Type="Int32" />
+          <Property Name="SystemAge" Type="Int32" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_by_ID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_ID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="SiteComment" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="BillAddress_ID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+          <NavigationProperty Name="Customer" Relationship="SALModel.FK_Site_Customer" FromRole="Site" ToRole="Customer" />
+          <NavigationProperty Name="Equipments" Relationship="SALModel.FK_Equipment_Site" FromRole="Site" ToRole="Equipment" />
+          <NavigationProperty Name="Locations" Relationship="SALModel.FK_Location_Site" FromRole="Site" ToRole="Location" />
+          <NavigationProperty Name="SiteVisits" Relationship="SALModel.FK_SiteVisit_Site" FromRole="Site" ToRole="SiteVisit" />
+        </EntityType>
+        <EntityType Name="Site_RevisitSchedule">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteID" Type="Int32" />
+          <Property Name="Preset_by_SiteVisitID" Type="Int32" />
+          <Property Name="statusCD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="dt_expect" Type="DateTime" />
+          <Property Name="expect_duration" Type="Int32" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SiteVisit">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteID" Type="Int32" />
+          <Property Name="AgreementID" Type="Int32" />
+          <Property Name="JobNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="statusCD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="JobType_cd" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="dt_start_exp" Type="DateTime" />
+          <Property Name="dt_complete_exp" Type="DateTime" />
+          <Property Name="dt_start_act" Type="DateTime" />
+          <Property Name="dt_complete_act" Type="DateTime" />
+          <Property Name="flg_Plan" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+          <Property Name="SpecialInstruction" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_by_ID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_ID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+          <NavigationProperty Name="Site" Relationship="SALModel.FK_SiteVisit_Site" FromRole="SiteVisit" ToRole="Site" />
+        </EntityType>
+        <EntityType Name="SiteVisitAssignment">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitID" Type="Int32" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="isLead" Type="Boolean" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SiteVisitEquipment">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EquipementID" Type="Int32" />
+          <Property Name="SiteVisitID" Type="Int32" />
+          <Property Name="TaskTemplateID" Type="Int32" />
+          <Property Name="TaskType_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="TaskStatus_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SiteVisitEquipment_Attributes">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitEquipmentID" Type="Int32" />
+          <Property Name="AttributeTemplateID" Type="Int32" />
+          <Property Name="ReadingNumberValue" Type="Double" />
+          <Property Name="ReadingTextValue" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ReadingTime" Type="DateTime" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SiteVisitEquipment_Problems">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitEquipmentID" Type="Int32" />
+          <Property Name="ProblemCategoryCD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="ProblemDescription" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="isImmediateHazard" Type="Boolean" />
+          <Property Name="HazardOptions" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="isCustomerNotifiedImmediate" Type="Boolean" />
+          <Property Name="ConsequenceOptions" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ConsequenceComment" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="RecommendationOptions" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="RecommendationComment" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="FixOptions" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="fix_Comments" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="isEstimateRequired" Type="Boolean" />
+          <Property Name="isProblemCorrected" Type="Boolean" />
+          <Property Name="dt_problemFound" Type="DateTime" />
+          <Property Name="dt_corrected" Type="DateTime" />
+          <Property Name="standard" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="section" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SeverityCD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_by_ID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_ID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+          <NavigationProperty Name="Equipment" Relationship="SALModel.FK_SiteVisitEquipmentProblem_Equipment" FromRole="SiteVisitEquipment_Problems" ToRole="Equipment" />
+        </EntityType>
+        <EntityType Name="SiteVisitEquipment_WorkLog">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitEquipmentID" Type="Int32" />
+          <Property Name="WorkCategoryCD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="WorkStatusCD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="WorkDescription" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SiteVisitSchedule">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitID" Type="Int32" />
+          <Property Name="dt_schedule_visit" Type="DateTime" />
+          <Property Name="visit_duration" Type="Int32" />
+          <Property Name="instruction" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="ContactID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="SiteVisitTasking">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteVisitID" Type="Int32" />
+          <Property Name="EquipmentID" Type="Int32" />
+          <Property Name="TaskDesc" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="TaskStatusCD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="TaskOrder" Type="Int32" />
+          <Property Name="isDelete" Type="Boolean" Nullable="false" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <NavigationProperty Name="Equipment" Relationship="SALModel.FK_SiteVisitTasking_Equipment" FromRole="SiteVisitTasking" ToRole="Equipment" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Task_Template">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaskCategory_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="description" Type="String" MaxLength="1024" Unicode="true" FixedLength="false" />
+          <Property Name="LaborHours" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_by_ID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_ID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="TaskTemplate_x_AttributeTemplate">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TaskTemplate_ID" Type="Int32" />
+          <Property Name="AttributeTemplate_ID" Type="Int32" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="tblLOV">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_code" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="LOV_code" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="sequence_num" Type="Int16" Nullable="false" />
+          <Property Name="value" Type="String" Nullable="false" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="alt_value" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="select_flg1" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="select_flg2" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="select_flg3" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="par_LOV_code" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="workflow_flg" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="Webform_flg" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="status_flg" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="dt_created" Type="DateTime" Nullable="false" />
+          <Property Name="created_by" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="dt_last_updated" Type="DateTime" Nullable="false" />
+          <Property Name="last_updated_by" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="modification_num" Type="Int16" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="tblLOV_Category">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="code" Type="String" Nullable="false" MaxLength="6" Unicode="false" FixedLength="true" />
+          <Property Name="desc" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="add_flg" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="edit_flg" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="dt_created" Type="DateTime" Nullable="false" />
+          <Property Name="created_by" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="dt_last_updated" Type="DateTime" Nullable="false" />
+          <Property Name="last_updated_by" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="modification_num" Type="Int16" Nullable="false" />
+          <Property Name="display_flg" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="delete_flg" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ROW_ID" />
+          </Key>
+          <Property Name="ROW_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LoginName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="password" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Domain_IP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DisplayName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Company" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="UserType_CD" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+          <Property Name="ROLES" Type="String" MaxLength="80" Unicode="true" FixedLength="false" />
+          <Property Name="dt_expiry" Type="DateTime" />
+          <Property Name="status_flg" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="dt_created" Type="DateTime" />
+          <Property Name="created_UID" Type="Int32" />
+          <Property Name="dt_last_updated" Type="DateTime" />
+          <Property Name="last_updated_UID" Type="Int32" />
+          <Property Name="modification_um" Type="Int32" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <EntityType Name="User_role">
+          <Key>
+            <PropertyRef Name="row_id" />
+          </Key>
+          <Property Name="row_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="role_code" Type="String" MaxLength="10" Unicode="false" FixedLength="true" />
+          <Property Name="role_name" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="role_index" Type="Int16" />
+          <Property Name="note" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="dt_created" Type="DateTime" Nullable="false" />
+          <Property Name="created_by" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="dt_last_updated" Type="DateTime" Nullable="false" />
+          <Property Name="last_updated_by" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="modification_num" Type="Int16" Nullable="false" />
+          <Property Name="RowGuid" Type="Guid" />
+        </EntityType>
+        <Association Name="FK_Agreement_Customer">
+          <End Role="Customer" Type="SALModel.Customer" Multiplicity="1" />
+          <End Role="Agreement" Type="SALModel.Agreement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="row_id" />
+            </Principal>
+            <Dependent Role="Agreement">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Site_Customer">
+          <End Role="Customer" Type="SALModel.Customer" Multiplicity="0..1" />
+          <End Role="Site" Type="SALModel.Site" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="row_id" />
+            </Principal>
+            <Dependent Role="Site">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipment_Site">
+          <End Role="Site" Type="SALModel.Site" Multiplicity="0..1" />
+          <End Role="Equipment" Type="SALModel.Equipment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="ROW_ID" />
+            </Principal>
+            <Dependent Role="Equipment">
+              <PropertyRef Name="SiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SiteVisitEquipmentProblem_Equipment">
+          <End Role="Equipment" Type="SALModel.Equipment" Multiplicity="0..1" />
+          <End Role="SiteVisitEquipment_Problems" Type="SALModel.SiteVisitEquipment_Problems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="row_id" />
+            </Principal>
+            <Dependent Role="SiteVisitEquipment_Problems">
+              <PropertyRef Name="SiteVisitEquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SiteVisitTasking_Equipment">
+          <End Role="Equipment" Type="SALModel.Equipment" Multiplicity="0..1" />
+          <End Role="SiteVisitTasking" Type="SALModel.SiteVisitTasking" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipment">
+              <PropertyRef Name="row_id" />
+            </Principal>
+            <Dependent Role="SiteVisitTasking">
+              <PropertyRef Name="EquipmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Location_Site">
+          <End Role="Site" Type="SALModel.Site" Multiplicity="0..1" />
+          <End Role="Location" Type="SALModel.Location" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="ROW_ID" />
+            </Principal>
+            <Dependent Role="Location">
+              <PropertyRef Name="SiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Model_Manufacturer">
+          <End Role="Manufacturer" Type="SALModel.Manufacturer" Multiplicity="1" />
+          <End Role="Model" Type="SALModel.Model" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Manufacturer">
+              <PropertyRef Name="row_id" />
+            </Principal>
+            <Dependent Role="Model">
+              <PropertyRef Name="ManufacturerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SiteVisit_Site">
+          <End Role="Site" Type="SALModel.Site" Multiplicity="0..1" />
+          <End Role="SiteVisit" Type="SALModel.SiteVisit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Site">
+              <PropertyRef Name="ROW_ID" />
+            </Principal>
+            <Dependent Role="SiteVisit">
+              <PropertyRef Name="SiteID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SALModelStoreContainer" CdmEntityContainer="SALEntities">
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="SALModel.Address">
+              <MappingFragment StoreEntitySet="Address">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="website" ColumnName="website" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Agreements">
+            <EntityTypeMapping TypeName="SALModel.Agreement">
+              <MappingFragment StoreEntitySet="Agreement">
+                <ScalarProperty Name="ROW_ID" ColumnName="ROW_ID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="AgreementNumber" ColumnName="AgreementNumber" />
+                <ScalarProperty Name="AgreementPrice" ColumnName="AgreementPrice" />
+                <ScalarProperty Name="dt_agreement" ColumnName="dt_agreement" />
+                <ScalarProperty Name="dt_effective" ColumnName="dt_effective" />
+                <ScalarProperty Name="dt_expiry" ColumnName="dt_expiry" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_ID" ColumnName="created_ID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_ID" ColumnName="last_updated_ID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attachments">
+            <EntityTypeMapping TypeName="SALModel.Attachment">
+              <MappingFragment StoreEntitySet="Attachment">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="par_obj_name" ColumnName="par_obj_name" />
+                <ScalarProperty Name="par_obj_ID" ColumnName="par_obj_ID" />
+                <ScalarProperty Name="Category_CD" ColumnName="Category_CD" />
+                <ScalarProperty Name="FileType_CD" ColumnName="FileType_CD" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attachment_ImageThumbNail">
+            <EntityTypeMapping TypeName="SALModel.Attachment_ImageThumbNail">
+              <MappingFragment StoreEntitySet="Attachment_ImageThumbNail">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="Attachment_ID" ColumnName="Attachment_ID" />
+                <ScalarProperty Name="ThumbNail" ColumnName="ThumbNail" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Attribute_Template">
+            <EntityTypeMapping TypeName="SALModel.Attribute_Template">
+              <MappingFragment StoreEntitySet="Attribute_Template">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="ATT_Name" ColumnName="ATT_Name" />
+                <ScalarProperty Name="ATT_Unit" ColumnName="ATT_Unit" />
+                <ScalarProperty Name="ATT_TypeCD" ColumnName="ATT_TypeCD" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="SALModel.Contact">
+              <MappingFragment StoreEntitySet="Contact">
+                <ScalarProperty Name="ROW_ID" ColumnName="ROW_ID" />
+                <ScalarProperty Name="ContactName" ColumnName="ContactName" />
+                <ScalarProperty Name="Type_CD" ColumnName="Type_CD" />
+                <ScalarProperty Name="Title_CD" ColumnName="Title_CD" />
+                <ScalarProperty Name="address_ID" ColumnName="address_ID" />
+                <ScalarProperty Name="par_obj_name" ColumnName="par_obj_name" />
+                <ScalarProperty Name="par_obj_ID" ColumnName="par_obj_ID" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="BestContactMethod" ColumnName="BestContactMethod" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by_ID" ColumnName="created_by_ID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_ID" ColumnName="last_updated_ID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="SALModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="BusinessName" ColumnName="BusinessName" />
+                <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+                <ScalarProperty Name="Address1" ColumnName="Address1" />
+                <ScalarProperty Name="Address2" ColumnName="Address2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by_ID" ColumnName="created_by_ID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_ID" ColumnName="last_updated_ID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="address_id" ColumnName="address_id" />
+                <ScalarProperty Name="PrimaryContactID" ColumnName="PrimaryContactID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+                <ScalarProperty Name="BillAddress_id" ColumnName="BillAddress_id" />
+                <ScalarProperty Name="business_type_cd" ColumnName="business_type_cd" />
+                <ScalarProperty Name="status_cd" ColumnName="status_cd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipments">
+            <EntityTypeMapping TypeName="SALModel.Equipment">
+              <MappingFragment StoreEntitySet="Equipment">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="parent_ID" ColumnName="parent_ID" />
+                <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+                <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+                <ScalarProperty Name="EquipmentTypeID" ColumnName="EquipmentTypeID" />
+                <ScalarProperty Name="ModelID" ColumnName="ModelID" />
+                <ScalarProperty Name="Asset_ID" ColumnName="Asset_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Application" ColumnName="Application" />
+                <ScalarProperty Name="SafetyNotes" ColumnName="SafetyNotes" />
+                <ScalarProperty Name="YearBuilt" ColumnName="YearBuilt" />
+                <ScalarProperty Name="flg_Energized" ColumnName="flg_Energized" />
+                <ScalarProperty Name="isCritical" ColumnName="isCritical" />
+                <ScalarProperty Name="NPVolts" ColumnName="NPVolts" />
+                <ScalarProperty Name="isStartLoop" ColumnName="isStartLoop" />
+                <ScalarProperty Name="isContainer" ColumnName="isContainer" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by_ID" ColumnName="created_by_ID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_ID" ColumnName="last_updated_ID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipment_InstallationAttributeValues">
+            <EntityTypeMapping TypeName="SALModel.Equipment_InstallationAttributeValues">
+              <MappingFragment StoreEntitySet="Equipment_InstallationAttributeValues">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+                <ScalarProperty Name="AttributeTemplateID" ColumnName="AttributeTemplateID" />
+                <ScalarProperty Name="NumberValue" ColumnName="NumberValue" />
+                <ScalarProperty Name="TextValue" ColumnName="TextValue" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EquipmentCategories">
+            <EntityTypeMapping TypeName="SALModel.EquipmentCategory">
+              <MappingFragment StoreEntitySet="EquipmentCategory">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EquipmentTypes">
+            <EntityTypeMapping TypeName="SALModel.EquipmentType">
+              <MappingFragment StoreEntitySet="EquipmentType">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="EquipmentCategoryID" ColumnName="EquipmentCategoryID" />
+                <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+                <ScalarProperty Name="TeggEquipCode" ColumnName="TeggEquipCode" />
+                <ScalarProperty Name="TagPrefix" ColumnName="TagPrefix" />
+                <ScalarProperty Name="isMediumVoltage" ColumnName="isMediumVoltage" />
+                <ScalarProperty Name="isPanel" ColumnName="isPanel" />
+                <ScalarProperty Name="isRelay" ColumnName="isRelay" />
+                <ScalarProperty Name="isContainOil" ColumnName="isContainOil" />
+                <ScalarProperty Name="ReplacementCost" ColumnName="ReplacementCost" />
+                <ScalarProperty Name="PremiumFactor" ColumnName="PremiumFactor" />
+                <ScalarProperty Name="isDefaultColor" ColumnName="isDefaultColor" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by_ID" ColumnName="created_by_ID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_ID" ColumnName="last_updated_ID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+                <ScalarProperty Name="category_cd" ColumnName="category_cd" />
+                <ScalarProperty Name="Merge_to_ID" ColumnName="Merge_to_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EquipmentType_Attribute">
+            <EntityTypeMapping TypeName="SALModel.EquipmentType_Attribute">
+              <MappingFragment StoreEntitySet="EquipmentType_Attribute">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="EquipmentTypeID" ColumnName="EquipmentTypeID" />
+                <ScalarProperty Name="AttributeTemplateID" ColumnName="AttributeTemplateID" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Form_Template">
+            <EntityTypeMapping TypeName="SALModel.Form_Template">
+              <MappingFragment StoreEntitySet="Form_Template">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="TemplateName" ColumnName="TemplateName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+                <ScalarProperty Name="FormType_CD" ColumnName="FormType_CD" />
+                <ScalarProperty Name="status_flg" ColumnName="status_flg" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="SALModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Manufacturers">
+            <EntityTypeMapping TypeName="SALModel.Manufacturer">
+              <MappingFragment StoreEntitySet="Manufacturer">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Models">
+            <EntityTypeMapping TypeName="SALModel.Model">
+              <MappingFragment StoreEntitySet="Model">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="ManufacturerID" ColumnName="ManufacturerID" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Problem_Template">
+            <EntityTypeMapping TypeName="SALModel.Problem_Template">
+              <MappingFragment StoreEntitySet="Problem_Template">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="ProblemType_CD" ColumnName="ProblemType_CD" />
+                <ScalarProperty Name="category_CD" ColumnName="category_CD" />
+                <ScalarProperty Name="ProblemDescription" ColumnName="ProblemDescription" />
+                <ScalarProperty Name="ConsequencesComments" ColumnName="ConsequencesComments" />
+                <ScalarProperty Name="RecommendationsComments" ColumnName="RecommendationsComments" />
+                <ScalarProperty Name="status_flg" ColumnName="status_flg" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by_ID" ColumnName="created_by_ID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_ID" ColumnName="last_updated_ID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="rowguid" ColumnName="rowguid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuickLinkLogs">
+            <EntityTypeMapping TypeName="SALModel.QuickLinkLog">
+              <MappingFragment StoreEntitySet="QuickLinkLog">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="SiteVisit_ID" ColumnName="SiteVisit_ID" />
+                <ScalarProperty Name="Customer_ID" ColumnName="Customer_ID" />
+                <ScalarProperty Name="dt_sent" ColumnName="dt_sent" />
+                <ScalarProperty Name="dt_expiry" ColumnName="dt_expiry" />
+                <ScalarProperty Name="verification_code" ColumnName="verification_code" />
+                <ScalarProperty Name="times_login" ColumnName="times_login" />
+                <ScalarProperty Name="login_ip" ColumnName="login_ip" />
+                <ScalarProperty Name="login_name" ColumnName="login_name" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sites">
+            <EntityTypeMapping TypeName="SALModel.Site">
+              <MappingFragment StoreEntitySet="Site">
+                <ScalarProperty Name="ROW_ID" ColumnName="ROW_ID" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="SalesRepID" ColumnName="SalesRepID" />
+                <ScalarProperty Name="PrimaryContactID" ColumnName="PrimaryContactID" />
+                <ScalarProperty Name="SiteStatusCD" ColumnName="SiteStatusCD" />
+                <ScalarProperty Name="FacilitySize" ColumnName="FacilitySize" />
+                <ScalarProperty Name="YearBuilt" ColumnName="YearBuilt" />
+                <ScalarProperty Name="SystemAge" ColumnName="SystemAge" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by_ID" ColumnName="created_by_ID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_ID" ColumnName="last_updated_ID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="SiteComment" ColumnName="SiteComment" />
+                <ScalarProperty Name="BillAddress_ID" ColumnName="BillAddress_ID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Site_RevisitSchedule">
+            <EntityTypeMapping TypeName="SALModel.Site_RevisitSchedule">
+              <MappingFragment StoreEntitySet="Site_RevisitSchedule">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+                <ScalarProperty Name="Preset_by_SiteVisitID" ColumnName="Preset_by_SiteVisitID" />
+                <ScalarProperty Name="statusCD" ColumnName="statusCD" />
+                <ScalarProperty Name="dt_expect" ColumnName="dt_expect" />
+                <ScalarProperty Name="expect_duration" ColumnName="expect_duration" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteVisits">
+            <EntityTypeMapping TypeName="SALModel.SiteVisit">
+              <MappingFragment StoreEntitySet="SiteVisit">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="SiteID" ColumnName="SiteID" />
+                <ScalarProperty Name="AgreementID" ColumnName="AgreementID" />
+                <ScalarProperty Name="JobNumber" ColumnName="JobNumber" />
+                <ScalarProperty Name="statusCD" ColumnName="statusCD" />
+                <ScalarProperty Name="JobType_cd" ColumnName="JobType_cd" />
+                <ScalarProperty Name="dt_start_exp" ColumnName="dt_start_exp" />
+                <ScalarProperty Name="dt_complete_exp" ColumnName="dt_complete_exp" />
+                <ScalarProperty Name="dt_start_act" ColumnName="dt_start_act" />
+                <ScalarProperty Name="dt_complete_act" ColumnName="dt_complete_act" />
+                <ScalarProperty Name="flg_Plan" ColumnName="flg_Plan" />
+                <ScalarProperty Name="SpecialInstruction" ColumnName="SpecialInstruction" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by_ID" ColumnName="created_by_ID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_ID" ColumnName="last_updated_ID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteVisitAssignments">
+            <EntityTypeMapping TypeName="SALModel.SiteVisitAssignment">
+              <MappingFragment StoreEntitySet="SiteVisitAssignment">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="SiteVisitID" ColumnName="SiteVisitID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="isLead" ColumnName="isLead" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteVisitEquipments">
+            <EntityTypeMapping TypeName="SALModel.SiteVisitEquipment">
+              <MappingFragment StoreEntitySet="SiteVisitEquipment">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="EquipementID" ColumnName="EquipementID" />
+                <ScalarProperty Name="SiteVisitID" ColumnName="SiteVisitID" />
+                <ScalarProperty Name="TaskTemplateID" ColumnName="TaskTemplateID" />
+                <ScalarProperty Name="TaskType_CD" ColumnName="TaskType_CD" />
+                <ScalarProperty Name="TaskStatus_CD" ColumnName="TaskStatus_CD" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteVisitEquipment_Attributes">
+            <EntityTypeMapping TypeName="SALModel.SiteVisitEquipment_Attributes">
+              <MappingFragment StoreEntitySet="SiteVisitEquipment_Attributes">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="SiteVisitEquipmentID" ColumnName="SiteVisitEquipmentID" />
+                <ScalarProperty Name="AttributeTemplateID" ColumnName="AttributeTemplateID" />
+                <ScalarProperty Name="ReadingNumberValue" ColumnName="ReadingNumberValue" />
+                <ScalarProperty Name="ReadingTextValue" ColumnName="ReadingTextValue" />
+                <ScalarProperty Name="ReadingTime" ColumnName="ReadingTime" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteVisitEquipment_Problems">
+            <EntityTypeMapping TypeName="SALModel.SiteVisitEquipment_Problems">
+              <MappingFragment StoreEntitySet="SiteVisitEquipment_Problems">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="SiteVisitEquipmentID" ColumnName="SiteVisitEquipmentID" />
+                <ScalarProperty Name="ProblemCategoryCD" ColumnName="ProblemCategoryCD" />
+                <ScalarProperty Name="ProblemDescription" ColumnName="ProblemDescription" />
+                <ScalarProperty Name="isImmediateHazard" ColumnName="isImmediateHazard" />
+                <ScalarProperty Name="HazardOptions" ColumnName="HazardOptions" />
+                <ScalarProperty Name="isCustomerNotifiedImmediate" ColumnName="isCustomerNotifiedImmediate" />
+                <ScalarProperty Name="ConsequenceOptions" ColumnName="ConsequenceOptions" />
+                <ScalarProperty Name="ConsequenceComment" ColumnName="ConsequenceComment" />
+                <ScalarProperty Name="RecommendationOptions" ColumnName="RecommendationOptions" />
+                <ScalarProperty Name="RecommendationComment" ColumnName="RecommendationComment" />
+                <ScalarProperty Name="FixOptions" ColumnName="FixOptions" />
+                <ScalarProperty Name="fix_Comments" ColumnName="fix_Comments" />
+                <ScalarProperty Name="isEstimateRequired" ColumnName="isEstimateRequired" />
+                <ScalarProperty Name="isProblemCorrected" ColumnName="isProblemCorrected" />
+                <ScalarProperty Name="dt_problemFound" ColumnName="dt_problemFound" />
+                <ScalarProperty Name="dt_corrected" ColumnName="dt_corrected" />
+                <ScalarProperty Name="standard" ColumnName="standard" />
+                <ScalarProperty Name="section" ColumnName="section" />
+                <ScalarProperty Name="SeverityCD" ColumnName="SeverityCD" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by_ID" ColumnName="created_by_ID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_ID" ColumnName="last_updated_ID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteVisitEquipment_WorkLog">
+            <EntityTypeMapping TypeName="SALModel.SiteVisitEquipment_WorkLog">
+              <MappingFragment StoreEntitySet="SiteVisitEquipment_WorkLog">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="SiteVisitEquipmentID" ColumnName="SiteVisitEquipmentID" />
+                <ScalarProperty Name="WorkCategoryCD" ColumnName="WorkCategoryCD" />
+                <ScalarProperty Name="WorkStatusCD" ColumnName="WorkStatusCD" />
+                <ScalarProperty Name="WorkDescription" ColumnName="WorkDescription" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteVisitSchedules">
+            <EntityTypeMapping TypeName="SALModel.SiteVisitSchedule">
+              <MappingFragment StoreEntitySet="SiteVisitSchedule">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="SiteVisitID" ColumnName="SiteVisitID" />
+                <ScalarProperty Name="dt_schedule_visit" ColumnName="dt_schedule_visit" />
+                <ScalarProperty Name="visit_duration" ColumnName="visit_duration" />
+                <ScalarProperty Name="instruction" ColumnName="instruction" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteVisitTaskings">
+            <EntityTypeMapping TypeName="SALModel.SiteVisitTasking">
+              <MappingFragment StoreEntitySet="SiteVisitTasking">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="SiteVisitID" ColumnName="SiteVisitID" />
+                <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+                <ScalarProperty Name="TaskDesc" ColumnName="TaskDesc" />
+                <ScalarProperty Name="TaskStatusCD" ColumnName="TaskStatusCD" />
+                <ScalarProperty Name="TaskOrder" ColumnName="TaskOrder" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SALModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Task_Template">
+            <EntityTypeMapping TypeName="SALModel.Task_Template">
+              <MappingFragment StoreEntitySet="Task_Template">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="TaskCategory_CD" ColumnName="TaskCategory_CD" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="LaborHours" ColumnName="LaborHours" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by_ID" ColumnName="created_by_ID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_ID" ColumnName="last_updated_ID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TaskTemplate_x_AttributeTemplate">
+            <EntityTypeMapping TypeName="SALModel.TaskTemplate_x_AttributeTemplate">
+              <MappingFragment StoreEntitySet="TaskTemplate_x_AttributeTemplate">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="TaskTemplate_ID" ColumnName="TaskTemplate_ID" />
+                <ScalarProperty Name="AttributeTemplate_ID" ColumnName="AttributeTemplate_ID" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLOVs">
+            <EntityTypeMapping TypeName="SALModel.tblLOV">
+              <MappingFragment StoreEntitySet="tblLOV">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="category_code" ColumnName="category_code" />
+                <ScalarProperty Name="LOV_code" ColumnName="LOV_code" />
+                <ScalarProperty Name="sequence_num" ColumnName="sequence_num" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="alt_value" ColumnName="alt_value" />
+                <ScalarProperty Name="select_flg1" ColumnName="select_flg1" />
+                <ScalarProperty Name="select_flg2" ColumnName="select_flg2" />
+                <ScalarProperty Name="select_flg3" ColumnName="select_flg3" />
+                <ScalarProperty Name="par_LOV_code" ColumnName="par_LOV_code" />
+                <ScalarProperty Name="workflow_flg" ColumnName="workflow_flg" />
+                <ScalarProperty Name="Webform_flg" ColumnName="Webform_flg" />
+                <ScalarProperty Name="status_flg" ColumnName="status_flg" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_by" ColumnName="last_updated_by" />
+                <ScalarProperty Name="modification_num" ColumnName="modification_num" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblLOV_Category">
+            <EntityTypeMapping TypeName="SALModel.tblLOV_Category">
+              <MappingFragment StoreEntitySet="tblLOV_Category">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="code" ColumnName="code" />
+                <ScalarProperty Name="desc" ColumnName="desc" />
+                <ScalarProperty Name="add_flg" ColumnName="add_flg" />
+                <ScalarProperty Name="edit_flg" ColumnName="edit_flg" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_by" ColumnName="last_updated_by" />
+                <ScalarProperty Name="modification_num" ColumnName="modification_num" />
+                <ScalarProperty Name="display_flg" ColumnName="display_flg" />
+                <ScalarProperty Name="delete_flg" ColumnName="delete_flg" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="SALModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ROW_ID" ColumnName="ROW_ID" />
+                <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="Domain_IP" ColumnName="Domain_IP" />
+                <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserType_CD" ColumnName="UserType_CD" />
+                <ScalarProperty Name="ROLES" ColumnName="ROLES" />
+                <ScalarProperty Name="dt_expiry" ColumnName="dt_expiry" />
+                <ScalarProperty Name="status_flg" ColumnName="status_flg" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_UID" ColumnName="created_UID" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_UID" ColumnName="last_updated_UID" />
+                <ScalarProperty Name="modification_um" ColumnName="modification_um" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_role">
+            <EntityTypeMapping TypeName="SALModel.User_role">
+              <MappingFragment StoreEntitySet="User_role">
+                <ScalarProperty Name="row_id" ColumnName="row_id" />
+                <ScalarProperty Name="role_code" ColumnName="role_code" />
+                <ScalarProperty Name="role_name" ColumnName="role_name" />
+                <ScalarProperty Name="role_index" ColumnName="role_index" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="dt_created" ColumnName="dt_created" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="dt_last_updated" ColumnName="dt_last_updated" />
+                <ScalarProperty Name="last_updated_by" ColumnName="last_updated_by" />
+                <ScalarProperty Name="modification_num" ColumnName="modification_num" />
+                <ScalarProperty Name="RowGuid" ColumnName="RowGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="SALModel" ZoomLevel="93">
+        <EntityTypeShape EntityType="SALModel.Address" Width="1.5" PointX="9.75" PointY="5.75" Height="4.480205078125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Agreement" Width="1.5" PointX="3" PointY="2" Height="3.9033007812499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Attachment" Width="1.5" PointX="0.75" PointY="6.75" Height="3.7109993489583326" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Attachment_ImageThumbNail" Width="1.5" PointX="10.75" PointY="0.75" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Attribute_Template" Width="1.5" PointX="11.75" PointY="3.75" Height="3.1340950520833335" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Contact" Width="1.5" PointX="11.75" PointY="7.75" Height="4.6725065104166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Customer" Width="1.5" PointX="0.75" PointY="11.25" Height="6.210917968749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Equipment" Width="1.5" PointX="5.25" PointY="8.875" Height="6.2109179687500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Equipment_InstallationAttributeValues" Width="1.5" PointX="13.75" PointY="0.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.EquipmentCategory" Width="1.5" PointX="13.75" PointY="4.75" Height="3.1340950520833353" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.EquipmentType" Width="1.5" PointX="13.75" PointY="8.75" Height="5.0571093750000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.EquipmentType_Attribute" Width="1.5" PointX="9.75" PointY="13.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Form_Template" Width="1.5" PointX="11.75" PointY="14.75" Height="3.3263964843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Location" Width="1.5" PointX="5.25" PointY="18" Height="3.3263964843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Manufacturer" Width="1.5" PointX="5.75" PointY="1.125" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Model" Width="1.5" PointX="8" PointY="1" Height="3.1340950520833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Problem_Template" Width="1.5" PointX="13.75" PointY="14.75" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.QuickLinkLog" Width="1.5" PointX="15.75" PointY="0.75" Height="3.1340950520833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Site" Width="1.5" PointX="3" PointY="13.75" Height="6.0186165364583317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Site_RevisitSchedule" Width="1.5" PointX="15.75" PointY="4.75" Height="3.1340950520833388" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.SiteVisit" Width="1.5" PointX="5.25" PointY="22" Height="4.6725065104166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.SiteVisitAssignment" Width="1.5" PointX="15.75" PointY="8.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.SiteVisitEquipment" Width="1.5" PointX="15.75" PointY="12.75" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.SiteVisitEquipment_Attributes" Width="1.5" PointX="17.75" PointY="0.75" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.SiteVisitEquipment_Problems" Width="1.5" PointX="7.5" PointY="6.75" Height="6.4032194010416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.SiteVisitEquipment_WorkLog" Width="1.5" PointX="17.75" PointY="5.75" Height="3.3263964843750102" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.SiteVisitSchedule" Width="1.5" PointX="17.75" PointY="10.75" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.SiteVisitTasking" Width="1.5" PointX="7.5" PointY="13.875" Height="3.326396484374996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.sysdiagram" Width="1.5" PointX="17.75" PointY="15.75" Height="1.9802864583333246" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.Task_Template" Width="1.5" PointX="7.75" PointY="18.75" Height="2.7494921875000102" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.TaskTemplate_x_AttributeTemplate" Width="1.5" PointX="15.75" PointY="18.75" Height="2.5571907552083246" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.tblLOV" Width="1.5" PointX="17.75" PointY="18.75" Height="4.6725065104166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.tblLOV_Category" Width="1.5" PointX="19.75" PointY="0.75" Height="3.7109993489583246" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.User" Width="1.5" PointX="19.75" PointY="5.75" Height="4.2879036458333246" IsExpanded="true" />
+        <EntityTypeShape EntityType="SALModel.User_role" Width="1.5" PointX="9.75" PointY="19.75" Height="3.1340950520833246" IsExpanded="true" />
+        <AssociationConnector Association="SALModel.FK_Agreement_Customer" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.251152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="10.876152846153847" />
+          <ConnectorPoint PointX="2.625" PointY="3.951650390625" />
+          <ConnectorPoint PointX="3" PointY="3.951650390625" />
+        </AssociationConnector>
+        <AssociationConnector Association="SALModel.FK_Site_Customer" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="15.605458984374998" />
+          <ConnectorPoint PointX="3" PointY="15.605458984374998" />
+        </AssociationConnector>
+        <AssociationConnector Association="SALModel.FK_Equipment_Site" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="14.417958984375002" />
+          <ConnectorPoint PointX="5.25" PointY="14.417958984375002" />
+        </AssociationConnector>
+        <AssociationConnector Association="SALModel.FK_SiteVisitEquipmentProblem_Equipment" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="11.014109700520834" />
+          <ConnectorPoint PointX="7.5" PointY="11.014109700520834" />
+        </AssociationConnector>
+        <AssociationConnector Association="SALModel.FK_SiteVisitTasking_Equipment" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="14.480458984375002" />
+          <ConnectorPoint PointX="7.5" PointY="14.480458984375002" />
+        </AssociationConnector>
+        <AssociationConnector Association="SALModel.FK_Location_Site" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="18.884308268229166" />
+          <ConnectorPoint PointX="5.25" PointY="18.884308268229166" />
+        </AssociationConnector>
+        <AssociationConnector Association="SALModel.FK_Model_Manufacturer" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.25" PointY="2.5958968098958337" />
+          <ConnectorPoint PointX="8" PointY="2.5958968098958337" />
+        </AssociationConnector>
+        <AssociationConnector Association="SALModel.FK_SiteVisit_Site" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="19.768616536458332" />
+          <ConnectorPoint PointX="3.75" PointY="24.336253255208334" />
+          <ConnectorPoint PointX="5.25" PointY="24.336253255208334" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,6 +1,7 @@
 ﻿<Window x:Class="SAL.WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         Height="730" Width="1280" 
         Title="{Binding Path=DisplayName}" 
         WindowStartupLocation="CenterScreen" 
@@ -9,16 +10,37 @@
         <ResourceDictionary Source="Resource.xaml" />
     </Window.Resources>
     <Grid Margin="4">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="4"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Border Grid.Column="0" Style="{StaticResource BorderStyle}" Width="220">
-            <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=LeftPanel}"></Frame>
-        </Border>
-        <Border Grid.Column="2" Style="{StaticResource BorderStyle}">
-            <Frame Style="{StaticResource FrameStyle}" Content="{Binding Path=RightPanel}"></Frame>
-        </Border>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <DockPanel Grid.Row="0" Background="DarkBlue"></DockPanel>
+        <Label Grid.Row="0" Content="Welcome Geoffrey Li" Foreground="Aqua"></Label>
+        <Label Grid.Row="0" Content="SAL - Smith &amp; Long Field Work Management System" HorizontalAlignment="Center" FontWeight="Bold" Foreground="Gray" FontSize="14"></Label>   
+        <TabControl Grid.Row="1" SelectedIndex="1">
+            <!--<i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding Path=SelectionChangedCommand.Command}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>-->
+            <TabItem Header="Activity Calendar">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=ActivityCalendarPage}"></Frame>
+            </TabItem>
+            <TabItem Header="Customer/Site/Equipment View">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=CustomerSiteEquipmentPage}"></Frame>
+            </TabItem>
+            <TabItem Header="Workflow View">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=WorkflowPage}"></Frame>
+            </TabItem>
+            <TabItem Header="Administrative Report">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=AdministrativeReportPage}"></Frame>
+            </TabItem>
+            <TabItem Header="Data Admin">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=DataAdminPage}"></Frame>
+            </TabItem>
+            <TabItem Header="Data Synchronization">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=DataSynchronizationPage}"></Frame>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

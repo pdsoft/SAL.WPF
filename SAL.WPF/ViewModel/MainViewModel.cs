@@ -5,30 +5,49 @@ using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using SAL.WPF.View;
+using SAL.WPF.Command;
+using System.Windows.Input;
+using SAL.WPF.ViewModel.CustomerSiteEquipment;
+using SAL.WPF.View.CustomerSiteEquipment;
 
 namespace SAL.WPF.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
+        private CommandViewModel _selectionChangedCommand;
+
         #region Dependency Property
 
-        public Page LeftPanel
+        public Page CustomerSiteEquipmentPage
         {
-            get { return (Page)GetValue(LeftPanelProperty); }
-            set { SetValue(LeftPanelProperty, value); }
+            get { return (Page)GetValue(CustomerSiteEquipmentPageProperty); }
+            set { SetValue(CustomerSiteEquipmentPageProperty, value); }
         }
 
-        public static readonly DependencyProperty LeftPanelProperty =
-            DependencyProperty.Register("LeftPanel", typeof(Page), typeof(MainViewModel), new UIPropertyMetadata(null));
+        public static readonly DependencyProperty CustomerSiteEquipmentPageProperty =
+            DependencyProperty.Register("CustomerSiteEquipmentPage", typeof(Page), typeof(MainViewModel), new UIPropertyMetadata(null));
 
-        public Page RightPanel
+        #endregion
+
+        #region Property
+
+        public TabItem SelectedItem { get; set; }
+
+        #endregion
+
+        #region Command Property
+
+        public CommandViewModel SelectionChangedCommand
         {
-            get { return (Page)GetValue(RightPanelProperty); }
-            set { SetValue(RightPanelProperty, value); }
+            get
+            {
+                if (_selectionChangedCommand == null)
+                {
+                    _selectionChangedCommand = new CommandViewModel(new RelayCommand(OnSelectionChanged));
+                }
+                return _selectionChangedCommand;
+            }
         }
-
-        public static readonly DependencyProperty RightPanelProperty =
-            DependencyProperty.Register("RightPanel", typeof(Page), typeof(MainViewModel), new UIPropertyMetadata(null));
 
         #endregion
 
@@ -36,13 +55,36 @@ namespace SAL.WPF.ViewModel
 
         public MainViewModel()
         {
-            Page leftPage = new LeftPage();
-            leftPage.DataContext = new LeftViewModel();
-            this.LeftPanel = leftPage;
+            DisplayName = "SAL";
 
-            Page rightPage = new SitePage();
-            rightPage.DataContext = new SiteViewModel(this);
-            this.RightPanel = rightPage;
+            SetCustomerSiteEquipmentPage();
+        }
+
+        #endregion
+
+        #region Method
+
+        private void SetCustomerSiteEquipmentPage()
+        {
+            Page page = new CustomerSiteEquipmentPage();
+            page.DataContext = new CustomerViewModel(this);
+            this.CustomerSiteEquipmentPage = page;
+        }
+
+        #endregion
+
+        #region Command Method
+
+        // command function, called by the xxxCommand.Execute.cs
+        private void OnSelectionChanged(object obj)
+        {
+            switch (SelectedItem.Header.ToString())
+            {
+                case "CustomerSiteEquipment":
+                default:
+                    SetCustomerSiteEquipmentPage();
+                    break;
+            }
         }
 
         #endregion

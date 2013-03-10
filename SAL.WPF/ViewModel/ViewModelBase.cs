@@ -2,6 +2,12 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Windows;
+using SAL.EFLib.Repository;
+using System.Windows.Controls;
+using SAL.WPF.ViewModel.CustomerSiteEquipment;
+using System.Collections.Generic;
+using SAL.WPF.Helper;
+using SAL.WPF.Service;
 
 namespace SAL.WPF.ViewModel
 {
@@ -18,6 +24,7 @@ namespace SAL.WPF.ViewModel
 
 		protected ViewModelBase()
 		{
+            dialogService = ServiceLocator.Resolve<IDialogService>();
 		}
 
 		#endregion // Constructor
@@ -123,5 +130,82 @@ namespace SAL.WPF.ViewModel
 #endif
 
 		#endregion // IDisposable Members
-	}
+
+        // by Fred
+        public ViewModelBase Parent { get; set; }
+
+
+        #region Dependency Property
+
+        public static readonly DependencyProperty LeftPanelProperty = 
+            DependencyProperty.Register("LeftPanel", typeof(Page), typeof(CustomerViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty RightPanelProperty =
+            DependencyProperty.Register("RightPanel", typeof(Page), typeof(CustomerViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty RadioButtonListProperty =
+            DependencyProperty.Register("RadioButtonList", typeof(List<CustomRadioButton>), typeof(CustomerLeftViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty Tab1PageProperty =
+            DependencyProperty.Register("Tab1Page", typeof(Page), typeof(CustomerRightViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty Tab2PageProperty =
+            DependencyProperty.Register("Tab2Page", typeof(Page), typeof(CustomerRightViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty Tab3PageProperty =
+            DependencyProperty.Register("Tab3Page", typeof(Page), typeof(CustomerRightViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty Tab4PageProperty =
+            DependencyProperty.Register("Tab4Page", typeof(Page), typeof(CustomerRightViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty Tab5PageProperty =
+            DependencyProperty.Register("Tab5Page", typeof(Page), typeof(CustomerRightViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty Tab6PageProperty =
+            DependencyProperty.Register("Tab6Page", typeof(Page), typeof(CustomerRightViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty Tab7PageProperty =
+            DependencyProperty.Register("Tab7Page", typeof(Page), typeof(CustomerRightViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty Tab8PageProperty =
+            DependencyProperty.Register("Tab8Page", typeof(Page), typeof(CustomerRightViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty AddEditPageProperty =
+            DependencyProperty.Register("AddEditPage", typeof(Page), typeof(AddEditViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty MainAddressPageProperty =
+            DependencyProperty.Register("MainAddressPage", typeof(Page), typeof(AddEditCustomerViewModel), new UIPropertyMetadata(null));
+
+        public static readonly DependencyProperty BillingAddressPageProperty =
+            DependencyProperty.Register("BillingAddressPage", typeof(Page), typeof(AddEditCustomerViewModel), new UIPropertyMetadata(null));
+
+        protected readonly IDialogService dialogService;
+
+        public static void RegisterDependencyProperty() 
+        {
+            LeftPanelProperty.AddOwner(typeof(SiteViewModel));
+            LeftPanelProperty.AddOwner(typeof(EquipmentViewModel));
+            RightPanelProperty.AddOwner(typeof(SiteViewModel));
+            RightPanelProperty.AddOwner(typeof(EquipmentViewModel));
+            RadioButtonListProperty.AddOwner(typeof(SiteViewModel));
+            RadioButtonListProperty.AddOwner(typeof(EquipmentViewModel));
+            Tab1PageProperty.AddOwner(typeof(SiteViewModel));
+            Tab1PageProperty.AddOwner(typeof(EquipmentViewModel));
+            Tab2PageProperty.AddOwner(typeof(SiteViewModel));
+            Tab2PageProperty.AddOwner(typeof(EquipmentViewModel));
+            Tab3PageProperty.AddOwner(typeof(SiteViewModel));
+            Tab3PageProperty.AddOwner(typeof(EquipmentViewModel));
+            Tab4PageProperty.AddOwner(typeof(SiteViewModel));
+            Tab4PageProperty.AddOwner(typeof(EquipmentViewModel));
+            Tab5PageProperty.AddOwner(typeof(SiteViewModel));
+            Tab5PageProperty.AddOwner(typeof(EquipmentViewModel));
+            Tab6PageProperty.AddOwner(typeof(SiteViewModel));
+            Tab6PageProperty.AddOwner(typeof(EquipmentViewModel));
+            Tab7PageProperty.AddOwner(typeof(SiteViewModel));
+            Tab7PageProperty.AddOwner(typeof(EquipmentViewModel));
+            Tab8PageProperty.AddOwner(typeof(SiteViewModel));
+            Tab8PageProperty.AddOwner(typeof(EquipmentViewModel));
+        }
+        #endregion
+    }
 }

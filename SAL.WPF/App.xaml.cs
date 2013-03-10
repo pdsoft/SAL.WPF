@@ -5,6 +5,8 @@ using System.Data;
 using System.Linq;
 using System.Windows;
 using SAL.WPF.ViewModel;
+using SAL.WPF.Service;
+using SAL.WPF.WindowViewModelMapping;
 
 namespace SAL.WPF
 {
@@ -18,6 +20,10 @@ namespace SAL.WPF
             base.OnStartup(e);
 
             // Configure service locator/ test
+            ServiceLocator.RegisterSingleton<IDialogService, DialogService>();
+            ServiceLocator.RegisterSingleton<IWindowViewModelMappings, WindowViewModelMappings>();
+
+            ViewModelBase.RegisterDependencyProperty();
 
             MainWindow mainWindow = new MainWindow();
             mainWindow.DataContext = new MainViewModel();

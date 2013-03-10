@@ -1,0 +1,94 @@
+﻿<Page x:Class="SAL.WPF.View.CustomerSiteEquipment.cseRightPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+      mc:Ignorable="d" 
+      xmlns:service="clr-namespace:SAL.WPF.Service"
+      service:DialogService.IsRegisteredView="True"
+	  Title="cseRightPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="4"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="300"/>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Visibility="{Binding TextBlock11Visibility}">
+                <Label Content="{Binding Label11}" Width="100"/>
+                <TextBox Text="{Binding Path=TextBox11}" Width="150" IsReadOnly="True"/>
+            </TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="0" Visibility="{Binding TextBlock21Visibility}">
+                <Label Content="{Binding Label21}" Width="100"/>
+                <TextBox Text="{Binding TextBox21}" Width="150" IsReadOnly="True"/>
+            </TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="2" Visibility="{Binding TextBlock12Visibility}">
+                <Label Content="{Binding Label12}" Width="100"/>
+                <TextBox Text="{Binding TextBox12}" Width="150" IsReadOnly="True"/>
+            </TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="2" Visibility="{Binding TextBlock22Visibility}">
+                <Label Content="{Binding Label22}" Width="100"/>
+                <TextBox Text="{Binding TextBox22}" Width="150" IsReadOnly="True"/>
+            </TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="4" Visibility="{Binding TextBlock13Visibility}">
+                <Label Content="{Binding Label13}" Width="100"/>
+                <TextBox Text="{Binding TextBox13}" Width="150" IsReadOnly="True"/>
+            </TextBlock>
+            <TextBlock Grid.Row="2" Grid.Column="4" Visibility="{Binding TextBlock23Visibility}">
+                <Label Content="{Binding Label23}" Width="100"/>
+                <TextBox Text="{Binding TextBox23}" Width="150" IsReadOnly="True"/>
+            </TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="6" Margin="2,6">
+                <Hyperlink Command="{Binding Path=EditCommand.Command}">
+                    <TextBlock Text="{Binding Path=EditCommand.DisplayName}" />
+                </Hyperlink>
+            </TextBlock>
+        </Grid>
+        <TabControl Grid.Row="2" SelectedItem="{Binding SelectedItem}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <TabItem Header="{Binding TabHeader1}" Visibility="{Binding TabHeader1Visibility}">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=Tab1Page}"></Frame>
+            </TabItem>
+            <TabItem Header="{Binding TabHeader2}" Visibility="{Binding TabHeader2Visibility}">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=Tab2Page}"></Frame>
+            </TabItem>
+            <TabItem Header="{Binding TabHeader3}" Visibility="{Binding TabHeader3Visibility}">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=Tab3Page}"></Frame>
+            </TabItem>
+            <TabItem Header="{Binding TabHeader4}" Visibility="{Binding TabHeader4Visibility}">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=Tab4Page}"></Frame>
+            </TabItem>
+            <TabItem Header="{Binding TabHeader5}" Visibility="{Binding TabHeader5Visibility}">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=Tab5Page}"></Frame>
+            </TabItem>
+            <TabItem Header="{Binding TabHeader6}" Visibility="{Binding TabHeader6Visibility}">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=Tab6Page}"></Frame>
+            </TabItem>
+            <TabItem Header="{Binding TabHeader7}" Visibility="{Binding TabHeader7Visibility}">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=Tab7Page}"></Frame>
+            </TabItem>
+            <TabItem Header="{Binding TabHeader8}" Visibility="{Binding TabHeader8Visibility}">
+                <Frame NavigationUIVisibility="Hidden" Content="{Binding Path=Tab8Page}"></Frame>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>
